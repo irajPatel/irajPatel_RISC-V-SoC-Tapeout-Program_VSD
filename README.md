@@ -30,30 +30,24 @@ This repository documents my **week-by-week progress** with tasks inside each we
 - Prepared the system for upcoming **RTL → GDSII flow experiments**.
 
 
-Absolutely! Here’s a **Week 1 summary** in the same clean, structured style as your Week 0, covering **Tasks 1–5** from your `Test_Synth.ys` and GLS work.
-
----
 
 ## 📅 Week 1 — RTL Synthesis & Gate-Level Simulation (GLS)
 
-| Task       | Description                                                                                                                                                                       | Status |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| **Task 1** | 🔧 [RTL Synthesis — MUX Example](Week1/README.md#-task-1--rtl-synthesis-mux-example) — Loaded `mux_generate.v`, synthesized using **Yosys**, mapped to Sky130 cells, and generated **GLS netlist**             | ✅ Done |
-| **Task 2** | 🎯 [Constant DFF Mapping & GLS](Week1/README.md#-task-2--constant-dff-mapping--gls) — Synthesized `const4.v` and `const5.v`, mapped constant-driven DFFs, and validated functionality using **Icarus Verilog** | ✅ Done |
-| **Task 3** | 💻 [MUX Using `for-generate`](Week1/README.md#-task-3--mux-using-for-generate) — Simulated and synthesized multiplexer with `for-generate`, verified RTL vs GLS match                                       | ✅ Done |
-| **Task 4** | 💻 [DEMUX Using `generate`](Week1/README.md#-task-4--demux-using-generate) — Synthesized and simulated DEMUX using generate constructs, verified RTL vs GLS outputs                                       | ✅ Done |
-| **Task 5** | ➕ [Ripple Carry Adder (RCA) Synthesis & GLS](Week1/README.md#-task-5--ripple-carry-adder-rca) — Synthesized and simulated RCA, verified arithmetic correctness in GLS vs RTL                                | ✅ Done |
+| Task       | Description                                                                 | Status |
+| ---------- | --------------------------------------------------------------------------- | ------ |
+| [**Task 1**](Week1/README.md#-task-1--rtl-synthesis-mux-example) | 🔧 MUX synthesis in Yosys, Sky130 mapping, GLS netlist generation         | ✅ Done |
+| [**Task 2**](Week1/README.md#-task-2--constant-dff-mapping--gls) | 🎯 Constant DFF mapping (`const4.v`, `const5.v`) + GLS validation          | ✅ Done |
+| [**Task 3**](Week1/README.md#-task-3--mux-using-for-generate) | 💻 MUX using `for-generate`, RTL vs GLS verification                       | ✅ Done |
+| [**Task 4**](Week1/README.md#-task-4--demux-using-generate) | 💻 DEMUX using `generate`, RTL vs GLS verification                         | ✅ Done |
+| [**Task 5**](Week1/README.md#-task-5--ripple-carry-adder-rca) | ➕ Ripple Carry Adder synthesis & GLS validation                           | ✅ Done |
 
----
 
 ### 🌟 Key Learnings from Week 1
 
-* Learned **loading liberty files** and performing **generic synthesis** in Yosys.
-* Understood **flattening, DFF/latch mapping, and ABC-based technology mapping**.
-* Observed **GLS outputs match RTL simulations**, confirming functional correctness.
-* Explored **`for-generate` and `generate` constructs** for scalable hardware design.
-* Synthesized and validated **arithmetic circuits** like RCA using Sky130 cells.
-* Gained experience in **Icarus Verilog simulation workflow** (`iverilog → vvp → GTKWave`).
+* Mastered **Yosys synthesis flow**: liberty loading, flattening, DFF/latch mapping, and ABC optimization.  
+* Verified **RTL vs GLS correctness** using Icarus Verilog and GTKWave.  
+* Explored **scalable design constructs** (`generate`, `for-generate`) and synthesized arithmetic circuits (RCA).  
+
 
 ---
 
@@ -69,7 +63,7 @@ I also acknowledge the support of **RISC-V International**, **India Semiconducto
 ## 📈 **Weekly Progress Tracker**
 
 [![Week0](https://img.shields.io/badge/Week%200-Tools%20Setup-success?style=flat-square)](Week0)
-![Week 1](https://img.shields.io/badge/Week%201-Coming%20Soon-lightgrey?style=flat-square)
+[![Week 1](https://img.shields.io/badge/Week%201-Coming%20Soon-lightgrey?style=flat-square)](Week1/README.md)
 ![Week 2](https://img.shields.io/badge/Week%202-Upcoming-lightgrey?style=flat-square)
 
 
