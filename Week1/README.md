@@ -1,11 +1,6 @@
  
 # 🚀 Week1  RTL-GLS 
 
-Got it 👍 Let’s make this **Task 1 report more engaging, visual, and story-like** so it doesn’t look flat or boring.
-
-Here’s a polished version ⬇️
-
----
 
 # 🚀 Task 1 – Yosys Optimization with `opt_clean -purge`
 
