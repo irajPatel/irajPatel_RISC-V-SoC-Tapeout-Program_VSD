@@ -1,50 +1,79 @@
  
 # 🚀 Week1  RTL-GLS 
 
-## 📌 Task 1 – Yosys Optimization with `opt_clean -purge`
+Got it 👍 Let’s make this **Task 1 report more engaging, visual, and story-like** so it doesn’t look flat or boring.
 
-### 🔎 Objective
-
-Understand how `opt_clean -purge` optimizes redundant nets in `opt_check4.v` and `multiple_module_opt.v`.
-
-### 💻 Commands
-
-```bash
-yosys
-read_verilog opt_check4.v
-synth -top opt_check4
-opt_clean -purge
-show
-```
-
-```bash
-yosys
-read_verilog multiple_module_opt.v
-synth -top multiple_module_opt
-opt_clean -purge
-show
-```
-
-### 📊 Results
-
-* Before and after optimization with `opt_clean -purge`.
-
-![Opt Check](Images/Task1_opt_check4_show.png)
-![Multiple Module Optimized](Images/Task1_multiple_module_opt2_new_netlist.png)
-![Without Clean Purge](Images/Task1_multiple_module_opt2_without_clean_purge_compare.png)
-![Final Netlist](Images/Task1_multiple_module_opt2_n.png)
-
-### ✅ Conclusion
-
-`opt_clean -purge` removes unused logic and redundant nets, producing a simpler and more efficient design.
+Here’s a polished version ⬇️
 
 ---
+
+# 🚀 Task 1 – Yosys Optimization with `opt_clean -purge`
+
+## 🎯 Objective
+
+Explore how **Yosys** uses the `opt_clean -purge` command to **sweep away redundant wires, cells, and dead logic**, leaving behind a clean, efficient design.
+
+---
+
+## 🛠️ Flow & Commands
+
+| Step | Command                                                             | Purpose                              |
+| ---- | ------------------------------------------------------------------- | ------------------------------------ |
+| 1️⃣  | `read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib` | Load standard cell library           |
+| 2️⃣  | `read_verilog opt_check4.v`                                         | Load RTL design                      |
+| 3️⃣  | `synth -top opt_check4`                                             | Run synthesis                        |
+| 4️⃣  | `opt_clean -purge`                                                  | ✨ Remove unused nets, dangling cells |
+| 5️⃣  | `abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib`      | Map to technology cells              |
+| 6️⃣  | `show`                                                              | View netlist visually                |
+
+👉 Repeated same flow for `multiple_module_opt.v`.
+
+---
+
+## 📊 Results
+
+📌 **Case 1 – opt\_check4.v**
+
+* ✅ After optimization, the new netlist (`opt_check4_net.v`) looks **much cleaner**, with unnecessary wires removed.
+
+![Opt Check](Images/Task1_opt_check4_show.png)
+
+---
+
+📌 **Case 2 – multiple\_module\_opt.v**
+
+* ⚡ Before optimization → Netlist contained **extra redundant connections**.
+* ✂️ After `opt_clean -purge` → Design became **simpler, faster, and easier to read**.
+
+| Stage                      | Netlist Snapshot                                                                          |
+| -------------------------- | ----------------------------------------------------------------------------------------- |
+| Without `opt_clean -purge` | ![Without Clean Purge](Images/Task1_multiple_module_opt2_without_clean_purge_compare.png) |
+| With `opt_clean -purge`    | ![Final Netlist](Images/Task1_multiple_module_opt2_show.png)                              |
+
+---
+
+## 🧠 Key Takeaways
+
+* 🗑️ `opt_clean -purge` = **Garbage collector** for Yosys netlists.
+* 🚦 Removes unused nets, floating signals, and redundant cells.
+* 🎯 Leads to **smaller, faster, and easier-to-debug circuits**.
+* 🔧 Especially useful when working with **multi-module designs** where intermediate wires are left unused.
+
+---
+
+✨ **In short**:
+Think of `opt_clean -purge` as a **vacuum cleaner** for your design.
+It sweeps away all the dust (redundant logic) so only the **essential circuitry** remains. 🧹⚡
+
+---
+
+Do you want me to also **explain with a simple mini-Verilog example** (before vs after optimization netlist), so it’s even clearer why the extra nets vanish?
 
 
 
 # 🔧 Yosys Synthesis & GLS Flow
 
-## 📜 `Test_Synth.ys` Script Explanation
+## 📜 `Test_Synth.ys(codes/Test_Synth.ys)` Script Explanation
 
 ```tcl
 # 1. Load the Sky130 liberty file (contains timing + logic info)
@@ -93,11 +122,11 @@ Perform Yosys synthesis of constant-driven DFFs (`const4.v`, `const5.v`) and sim
 
 ```bash
 yosys
-read_liberty -lib sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog const4.v
 synth -top const4
-dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
-abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog const4_net.v
 ```
 
@@ -106,9 +135,8 @@ Repeat for `const5.v`.
 ### 💻 Icarus Verilog Flow
 
 ```bash
-iverilog -o const4_sim const4.v tb_const4.v
-vvp const4_sim
-gtkwave dump.vcd
+iverilog  const4.v tb_const4.v
+./a.out
 ```
 
 ### 📊 Results
@@ -273,17 +301,17 @@ Typical flow for mapping generic `$dff` to library flops:
 
 ```tcl
 # Step 1: Load library
-read_liberty -lib ../my_lib/lib/sky
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
 # Step 2: Read design
 read_verilog flop_name.v
 synth -top flop_name
 
 # Step 3: Map flip-flops
-dfflibmap -liberty ../my_lib/lib/sky   # replaces $dff with real flops
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib   # replaces $dff with real flops
 
 # Step 4: Optimize
-abc -liberty ../my_lib/lib/sky
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
 ---
@@ -329,25 +357,6 @@ opt_clean -purge
 
 
 
-I’ll prepare it like a **mini lab report**, where each task has:
-
-* 📂 **Section title**
-* 📜 **Explanation (theory + logic)**
-* 💻 **Code snippet (iverilog/Yosys commands)**
-* 📊 **Simulation Result (image placeholder)**
-* ✅ **Observation/Conclusion**
-
-Here’s a draft of how your `.md` file will look:
-
----
-
-### 💻 Simulation & Synthesis
-
-
-
-```bash
-iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v rca_GLS.v tb_rca.v
-```
 
 ## ⏱️ Why Gate Level Simulation (GLS)?
 
@@ -460,5 +469,3 @@ endcase
 | GLS necessity            | RTL ≠ Synthesis (possible mismatch) | GLS confirms functional equivalence.    |
 
 ---
-
-
