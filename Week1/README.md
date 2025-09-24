@@ -1,9 +1,179 @@
  
-# 🚀 RTL-to-GLS Synthesis with Yosys and Iverilog
+# 🚀 Week1  RTL-GLS 
 
-This project documents key concepts, Yosys flows, and practical experiments in **behavioral synthesis, hierarchical synthesis, flip-flop mapping, and optimization techniques** using standard cell libraries.
+## 📌 Task 1 – Yosys Optimization with `opt_clean -purge`
+
+### 🔎 Objective
+
+Understand how `opt_clean -purge` optimizes redundant nets in `opt_check4.v` and `multiple_module_opt.v`.
+
+### 💻 Commands
+
+```bash
+yosys
+read_verilog opt_check4.v
+synth -top opt_check4
+opt_clean -purge
+show
+```
+
+```bash
+yosys
+read_verilog multiple_module_opt.v
+synth -top multiple_module_opt
+opt_clean -purge
+show
+```
+
+### 📊 Results
+
+* Before and after optimization with `opt_clean -purge`.
+
+![Opt Check](Images/Task1_opt_check4_show.png)
+![Multiple Module Optimized](Images/Task1_multiple_module_opt2_new_netlist.png)
+![Without Clean Purge](Images/Task1_multiple_module_opt2_without_clean_purge_compare.png)
+![Final Netlist](Images/Task1_multiple_module_opt2_n.png)
+
+### ✅ Conclusion
+
+`opt_clean -purge` removes unused logic and redundant nets, producing a simpler and more efficient design.
 
 ---
+
+
+
+# 🔧 Yosys Synthesis & GLS Flow
+
+## 📜 `Test_Synth.ys` Script Explanation
+
+```tcl
+# 1. Load the Sky130 liberty file (contains timing + logic info)
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# 2. Load your RTL Verilog design
+read_verilog mux_generate.v
+
+# 3. Run generic synthesis
+synth -top mux_generate
+
+# 4. Flatten hierarchy (optional, removes module hierarchy)
+flatten
+
+# 5. Map flip-flops & latches to standard cells
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# 6. Optimize the design by removing redundant logic
+opt_clean -purge
+
+# 7. Technology mapping using ABC (maps to Sky130 standard cells)
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# 8. Remove unused cells/wires after mapping
+clean
+
+# 9. Optional: flatten hierarchy again
+flatten
+
+# 10. Write the final gate-level netlist
+write_verilog -noattr mux_generate_GLS.v
+
+# 11. Generate a schematic for visualization
+show -format png -prefix mux_generate_show
+```
+
+---
+
+## 📌 Task 2 – Constant DFF Mapping & GLS
+
+### 🔎 Objective
+
+Perform Yosys synthesis of constant-driven DFFs (`const4.v`, `const5.v`) and simulate using Icarus Verilog.
+
+### 💻 Yosys Flow
+
+```bash
+yosys
+read_liberty -lib sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog const4.v
+synth -top const4
+dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+write_verilog const4_net.v
+```
+
+Repeat for `const5.v`.
+
+### 💻 Icarus Verilog Flow
+
+```bash
+iverilog -o const4_sim const4.v tb_const4.v
+vvp const4_sim
+gtkwave dump.vcd
+```
+
+### 📊 Results
+
+![Const4 Simulation](Images/Task2_dff_const4_show_iverilog_simuatlion.png)
+![Const5 Simulation](Images/Task2_dff_const5_iverilog_simualtion.png)
+![Const5 Netlist](Images/Task2_dff_const5_show.png)
+
+### ✅ Conclusion
+
+* Constants are correctly propagated through DFF mapping.
+* GLS validates functionality but timing is not modeled (since `.lib` models are not delay-annotated).
+
+---
+
+## 📌 Task 3 – MUX Using `for-generate`
+
+### 💻 Simulation & Synthesis
+
+
+
+```bash
+yosys 
+    yosys -s Test_Synth.ys
+```
+
+```bash
+iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v mux_generate_GLS.v tb_mux_generate.v
+```
+
+### 📊 Results
+
+![MUX GLS vs RTL](Images/Task3_mux_GLSvsRTL_simulation.png)
+![MUX Netlist](Images/mux_generate_show.png)
+
+### ✅ Conclusion
+
+* RTL and GLS simulations match, proving structural correctness.
+* `for-generate` provides scalable hardware design.
+
+---
+
+## 📌 Task 4 – DEMUX Using `generate`
+
+### 💻 Commands
+
+
+```bash
+iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v demux_generate_GLS.v tb_demux_generate.v
+```
+
+
+### 📊 Results
+
+![DEMUX GLS vs RTL](Images/Task4_demux_GLS_vs_RTL_simulation.png)
+
+### ✅ Conclusion
+
+The demux functions correctly in both RTL and GLS simulations.
+
+---
+
+## 📌 Task 5 – Ripple Carry Adder (RCA)
+
+
 
 ## 🎭 1. Behavioral Synthesis
 
@@ -148,185 +318,6 @@ I’ll prepare it like a **mini lab report**, where each task has:
 Here’s a draft of how your `.md` file will look:
 
 ---
-
-# 🚀 Yosys & Icarus Verilog Lab Report
-
-## 📌 Task 1 – Yosys Optimization with `opt_clean -purge`
-
-### 🔎 Objective
-
-Understand how `opt_clean -purge` optimizes redundant nets in `opt_check4.v` and `multiple_module_opt.v`.
-
-### 💻 Commands
-
-```bash
-yosys
-read_verilog opt_check4.v
-synth -top opt_check4
-opt_clean -purge
-show
-```
-
-```bash
-yosys
-read_verilog multiple_module_opt.v
-synth -top multiple_module_opt
-opt_clean -purge
-show
-```
-
-### 📊 Results
-
-* Before and after optimization with `opt_clean -purge`.
-
-![Opt Check](Images/Task1_opt_check4_show.png)
-![Multiple Module Optimized](Images/Task1_multiple_module_opt2_new_netlist.png)
-![Without Clean Purge](Images/Task1_multiple_module_opt2_without_clean_purge_compare.png)
-![Final Netlist](Images/Task1_multiple_module_opt2_n.png)
-
-### ✅ Conclusion
-
-`opt_clean -purge` removes unused logic and redundant nets, producing a simpler and more efficient design.
-
----
-
-
-Got it 👍 You want me to take the **Test\_Synth.ys script and related tasks (2–5)**, and rewrite them in a **clear, structured, and proper way** so that it’s easy to follow what each step does, why it’s needed, and how GLS (Gate-Level Simulation) is performed.
-
-Here’s the cleaned-up and well-structured explanation 👇
-
----
-
-# 🔧 Yosys Synthesis & GLS Flow
-
-## 📜 `Test_Synth.ys` Script Explanation
-
-```tcl
-# 1. Load the Sky130 liberty file (contains timing + logic info)
-read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-# 2. Load your RTL Verilog design
-read_verilog mux_generate.v
-
-# 3. Run generic synthesis
-synth -top mux_generate
-
-# 4. Flatten hierarchy (optional, removes module hierarchy)
-flatten
-
-# 5. Map flip-flops & latches to standard cells
-dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-# 6. Optimize the design by removing redundant logic
-opt_clean -purge
-
-# 7. Technology mapping using ABC (maps to Sky130 standard cells)
-abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-# 8. Remove unused cells/wires after mapping
-clean
-
-# 9. Optional: flatten hierarchy again
-flatten
-
-# 10. Write the final gate-level netlist
-write_verilog -noattr mux_generate_GLS.v
-
-# 11. Generate a schematic for visualization
-show -format png -prefix mux_generate_show
-```
-
----
-
-## 📌 Task 2 – Constant DFF Mapping & GLS
-
-### 🔎 Objective
-
-Perform Yosys synthesis of constant-driven DFFs (`const4.v`, `const5.v`) and simulate using Icarus Verilog.
-
-### 💻 Yosys Flow
-
-```bash
-yosys
-read_liberty -lib sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog const4.v
-synth -top const4
-dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
-abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
-write_verilog const4_net.v
-```
-
-Repeat for `const5.v`.
-
-### 💻 Icarus Verilog Flow
-
-```bash
-iverilog -o const4_sim const4.v tb_const4.v
-vvp const4_sim
-gtkwave dump.vcd
-```
-
-### 📊 Results
-
-![Const4 Simulation](Images/Task2_dff_const4_show_iverilog_simuatlion.png)
-![Const5 Simulation](Images/Task2_dff_const5_iverilog_simualtion.png)
-![Const5 Netlist](Images/Task2_dff_const5_show.png)
-
-### ✅ Conclusion
-
-* Constants are correctly propagated through DFF mapping.
-* GLS validates functionality but timing is not modeled (since `.lib` models are not delay-annotated).
-
----
-
-## 📌 Task 3 – MUX Using `for-generate`
-
-### 💻 Simulation & Synthesis
-
-
-
-```bash
-yosys 
-    yosys -s Test_Synth.ys
-```
-
-```bash
-iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v mux_generate_GLS.v tb_mux_generate.v
-```
-
-### 📊 Results
-
-![MUX GLS vs RTL](Images/Task3_mux_GLSvsRTL_simulation.png)
-![MUX Netlist](Images/mux_generate_show.png)
-
-### ✅ Conclusion
-
-* RTL and GLS simulations match, proving structural correctness.
-* `for-generate` provides scalable hardware design.
-
----
-
-## 📌 Task 4 – DEMUX Using `generate`
-
-### 💻 Commands
-
-
-```bash
-iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v demux_generate_GLS.v tb_demux_generate.v
-```
-
-
-### 📊 Results
-
-![DEMUX GLS vs RTL](Images/Task4_demux_GLS_vs_RTL_simulation.png)
-
-### ✅ Conclusion
-
-The demux functions correctly in both RTL and GLS simulations.
-
----
-
-## 📌 Task 5 – Ripple Carry Adder (RCA)
 
 ### 💻 Simulation & Synthesis
 
