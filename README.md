@@ -30,6 +30,36 @@ This repository documents my **week-by-week progress** with tasks inside each we
 - Prepared the system for upcoming **RTL → GDSII flow experiments**.
 
 
+Absolutely! Here’s a **Week 1 summary** in the same clean, structured style as your Week 0, covering **Tasks 1–5** from your `Test_Synth.ys` and GLS work.
+
+---
+
+## 📅 Week 1 — RTL Synthesis & Gate-Level Simulation (GLS)
+
+| Task       | Description                                                                                                                                                                       | Status |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| **Task 1** | 🔧 [RTL Synthesis — MUX Example](Week1/README.md) — Loaded `mux_generate.v`, synthesized using **Yosys**, mapped to Sky130 cells, and generated **GLS netlist**             | ✅ Done |
+| **Task 2** | 🎯 [Constant DFF Mapping & GLS](Week1/README.md) — Synthesized `const4.v` and `const5.v`, mapped constant-driven DFFs, and validated functionality using **Icarus Verilog** | ✅ Done |
+| **Task 3** | 💻 [MUX Using `for-generate`](Week1/README.md) — Simulated and synthesized multiplexer with `for-generate`, verified RTL vs GLS match                                       | ✅ Done |
+| **Task 4** | 💻 [DEMUX Using `generate`](Week1/README.md) — Synthesized and simulated DEMUX using generate constructs, verified RTL vs GLS outputs                                       | ✅ Done |
+| **Task 5** | ➕ [Ripple Carry Adder (RCA) Synthesis & GLS](Week1/README.md) — Synthesized and simulated RCA, verified arithmetic correctness in GLS vs RTL                                | ✅ Done |
+
+---
+
+### 🌟 Key Learnings from Week 1
+
+* Learned **loading liberty files** and performing **generic synthesis** in Yosys.
+* Understood **flattening, DFF/latch mapping, and ABC-based technology mapping**.
+* Observed **GLS outputs match RTL simulations**, confirming functional correctness.
+* Explored **`for-generate` and `generate` constructs** for scalable hardware design.
+* Synthesized and validated **arithmetic circuits** like RCA using Sky130 cells.
+* Gained experience in **Icarus Verilog simulation workflow** (`iverilog → vvp → GTKWave`).
+
+---
+
+
+
+
 ## 🙏 Acknowledgment  
 
 I am thankful to [**Kunal Ghosh**](https://github.com/kunalg123) and Team **[VLSI System Design (VSD)](https://vsdiat.vlsisystemdesign.com/)** for the opportunity to participate in the ongoing **RISC-V SoC Tapeout Program**.  
