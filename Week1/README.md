@@ -73,7 +73,7 @@ Do you want me to also **explain with a simple mini-Verilog example** (before vs
 
 # 🔧 Yosys Synthesis & GLS Flow
 
-## 📜 `Test_Synth.ys(codes/Test_Synth.ys)` Script Explanation
+## 📜 [`Test_Synth.ys`](codes/Test_Synth.ys) Script Explanation
 
 ```tcl
 # 1. Load the Sky130 liberty file (contains timing + logic info)
@@ -112,45 +112,88 @@ show -format png -prefix mux_generate_show
 
 ---
 
-## 📌 Task 2 – Constant DFF Mapping & GLS
+Perfect 👍 Let’s turn this **Task 2 report** into a more engaging, structured, and visually clear explanation—almost like a **mini-story with tables and highlights** so it’s not boring to read.
 
-### 🔎 Objective
+Here’s a refined version:
 
-Perform Yosys synthesis of constant-driven DFFs (`const4.v`, `const5.v`) and simulate using Icarus Verilog.
+---
 
-### 💻 Yosys Flow
+# 📌 Task 2 – Constant DFF Mapping & GLS
+
+## 🎯 Objective
+
+Understand how **Yosys handles constant-driven flip-flops** (`const4.v`, `const5.v`) and verify the design with **Icarus Verilog simulation (GLS)**.
+
+---
+
+## ⚙️ Yosys Synthesis Flow
+
+| Step | Command                                                              | Purpose                            |
+| ---- | -------------------------------------------------------------------- | ---------------------------------- |
+| 1️⃣  | `read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib`  | Load standard-cell library         |
+| 2️⃣  | `read_verilog const4.v`                                              | Read RTL source                    |
+| 3️⃣  | `synth -top const4`                                                  | Run synthesis                      |
+| 4️⃣  | `dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib` | Map flip-flops to technology cells |
+| 5️⃣  | `abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib`       | Optimize & tech-map logic          |
+| 6️⃣  | `write_verilog const4_net.v`                                         | Save synthesized netlist           |
+
+👉 Same process repeated for **`const5.v`**.
+
+---
+
+## 🖥️ Icarus Verilog GLS Flow
 
 ```bash
-yosys
-read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog const4.v
-synth -top const4
-dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-write_verilog const4_net.v
-```
-
-Repeat for `const5.v`.
-
-### 💻 Icarus Verilog Flow
-
-```bash
-iverilog  const4.v tb_const4.v
+iverilog const4.v tb_const4.v
 ./a.out
 ```
 
-### 📊 Results
-
-![Const4 Simulation](Images/Task2_dff_const4_show_iverilog_simuatlion.png)
-![Const5 Simulation](Images/Task2_dff_const5_iverilog_simualtion.png)
-![Const5 Netlist](Images/Task2_dff_const5_show.png)
-
-### ✅ Conclusion
-
-* Constants are correctly propagated through DFF mapping.
-* GLS validates functionality but timing is not modeled (since `.lib` models are not delay-annotated).
+(Similar commands used for `const5.v`).
 
 ---
+
+## 📊 Results
+
+📌 **Case 1 – `const4.v`**
+
+* Both **`q` and `q1`** latch a constant `1`.
+* Yosys maps this with a **buffer** to maintain the constant-driven path.
+
+✅ Simulation confirms constant outputs:
+![Const4 Simulation](Images/Task2_dff_const4_show_iverilog_simuatlion.png)
+
+---
+
+📌 **Case 2 – `const5.v`**
+
+* When **reset = 1** → `q = q1 = 0`.
+* When **reset = 0** → `q1 = 1` and `q = q1`.
+* Yosys synthesis here correctly produces **two separate flip-flops**.
+
+✅ Simulation matches expected reset behavior:
+![Const5 Simulation](Images/Task2_dff_const5_iverilog_simualtion.png)
+
+✅ Netlist shows **both DFFs correctly mapped**:
+![Const5 Netlist](Images/Task2_dff_const5_show.png)
+
+---
+
+## 🧠 Key Learnings
+
+* 🔗 **Constant propagation** works seamlessly in Yosys.
+* 🧩 **Buffers may appear** when constants need to drive multiple outputs.
+* 🕹️ **Reset handling** ensures flops behave exactly as written in RTL.
+* ⏱️ GLS validates **functional correctness**, but **timing is not included** (since `.lib` doesn’t have delay models in this flow).
+
+---
+
+✨ **In short:**
+Yosys doesn’t just “blindly” keep flip-flops—
+it **optimizes constant values smartly** while still preserving reset-driven logic. Think of it like Yosys deciding:
+
+* *“If a flop is just stuck at `1`, I’ll simplify it.”*
+* *“If reset logic matters, I’ll keep the flops intact.”*
+
 
 ## 📌 Task 3 – MUX Using `for-generate`
 
