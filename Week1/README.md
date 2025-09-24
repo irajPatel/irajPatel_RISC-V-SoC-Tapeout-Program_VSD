@@ -107,11 +107,15 @@ show -format png -prefix mux_generate_show
 
 ---
 
-Perfect 👍 Let’s turn this **Task 2 report** into a more engaging, structured, and visually clear explanation—almost like a **mini-story with tables and highlights** so it’s not boring to read.
+👍 Run the [synthesis and generate](codes/Test_Synth.ys) the GLS netlist with:
 
-Here’s a refined version:
+```bash
+yosys -s Test_Synth.ys
+````
 
----
+💡 **Tip:** Change the top module or input file in `Test_Synth.ys` to generate GLS for any design you want put this file in verilog_files folder.
+
+
 
 # 📌 Task 2 – Constant DFF Mapping & GLS
 
