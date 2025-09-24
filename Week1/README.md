@@ -2,7 +2,7 @@
 # 🚀 Week1  RTL-GLS 
 
 
-# 🚀 Task 1 – Yosys Optimization with `opt_clean -purge`
+# 📌 Task 1 – Yosys Optimization with `opt_clean -purge`
 
 ## 🎯 Objective
 
