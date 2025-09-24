@@ -38,11 +38,11 @@ Absolutely! Here’s a **Week 1 summary** in the same clean, structured style as
 
 | Task       | Description                                                                                                                                                                       | Status |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| **Task 1** | 🔧 [RTL Synthesis — MUX Example](Week1/README.md) — Loaded `mux_generate.v`, synthesized using **Yosys**, mapped to Sky130 cells, and generated **GLS netlist**             | ✅ Done |
-| **Task 2** | 🎯 [Constant DFF Mapping & GLS](Week1/README.md) — Synthesized `const4.v` and `const5.v`, mapped constant-driven DFFs, and validated functionality using **Icarus Verilog** | ✅ Done |
-| **Task 3** | 💻 [MUX Using `for-generate`](Week1/README.md) — Simulated and synthesized multiplexer with `for-generate`, verified RTL vs GLS match                                       | ✅ Done |
-| **Task 4** | 💻 [DEMUX Using `generate`](Week1/README.md) — Synthesized and simulated DEMUX using generate constructs, verified RTL vs GLS outputs                                       | ✅ Done |
-| **Task 5** | ➕ [Ripple Carry Adder (RCA) Synthesis & GLS](Week1/README.md) — Synthesized and simulated RCA, verified arithmetic correctness in GLS vs RTL                                | ✅ Done |
+| **Task 1** | 🔧 [RTL Synthesis — MUX Example](Week1/README.md#-task-1--rtl-synthesis-mux-example) — Loaded `mux_generate.v`, synthesized using **Yosys**, mapped to Sky130 cells, and generated **GLS netlist**             | ✅ Done |
+| **Task 2** | 🎯 [Constant DFF Mapping & GLS](Week1/README.md#-task-2--constant-dff-mapping--gls) — Synthesized `const4.v` and `const5.v`, mapped constant-driven DFFs, and validated functionality using **Icarus Verilog** | ✅ Done |
+| **Task 3** | 💻 [MUX Using `for-generate`](Week1/README.md#-task-3--mux-using-for-generate) — Simulated and synthesized multiplexer with `for-generate`, verified RTL vs GLS match                                       | ✅ Done |
+| **Task 4** | 💻 [DEMUX Using `generate`](Week1/README.md#-task-4--demux-using-generate) — Synthesized and simulated DEMUX using generate constructs, verified RTL vs GLS outputs                                       | ✅ Done |
+| **Task 5** | ➕ [Ripple Carry Adder (RCA) Synthesis & GLS](Week1/README.md#-task-5--ripple-carry-adder-rca) — Synthesized and simulated RCA, verified arithmetic correctness in GLS vs RTL                                | ✅ Done |
 
 ---
 
