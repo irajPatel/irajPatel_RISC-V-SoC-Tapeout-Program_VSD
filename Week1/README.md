@@ -173,7 +173,30 @@ The demux functions correctly in both RTL and GLS simulations.
 
 ## 📌 Task 5 – Ripple Carry Adder (RCA)
 
+### 💻 Simulation & Synthesis
 
+
+
+```bash
+iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v rca_GLS.v tb_rca.v
+```
+
+### 📊 Results
+
+![RCA GLS](Images/Task5_rca_GLS_and_RTLsimulaltion.png)
+![RCA Netlist](Images/RippleCarryAdder_show.png)
+
+### ✅ Conclusion
+
+* RCA shows expected behavior in GLS vs RTL simulations.
+* Confirms correct synthesis of arithmetic circuits.
+
+
+
+
+
+
+# 📘 Theory Notes (With Tables)
 
 ## 🎭 1. Behavioral Synthesis
 
@@ -305,7 +328,6 @@ opt_clean -purge
 
 
 
-Got it ✅ You want me to create a **structured `.md` file** (Markdown report) that organizes all your tasks (Task1–Task5, GLS theory, optimization, latches, blocking caveats, etc.), connects them logically, and makes it visually appealing with code blocks, sections, and icons.
 
 I’ll prepare it like a **mini lab report**, where each task has:
 
@@ -326,20 +348,6 @@ Here’s a draft of how your `.md` file will look:
 ```bash
 iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v rca_GLS.v tb_rca.v
 ```
-
-### 📊 Results
-
-![RCA GLS](Images/Task5_rca_GLS_and_RTLsimulaltion.png)
-![RCA Netlist](Images/RippleCarryAdder_show.png)
-
-### ✅ Conclusion
-
-* RCA shows expected behavior in GLS vs RTL simulations.
-* Confirms correct synthesis of arithmetic circuits.
-
-# 📘 Theory Notes (With Tables)
-
----
 
 ## ⏱️ Why Gate Level Simulation (GLS)?
 
