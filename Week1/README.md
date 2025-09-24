@@ -195,220 +195,235 @@ it **optimizes constant values smartly** while still preserving reset-driven log
 * *“If reset logic matters, I’ll keep the flops intact.”*
 
 
-## 📌 Task 3 – MUX Using `for-generate`
+Nice 👍 These **Task 3–5 notes** can definitely be made more **engaging, structured, and visually clear**. Let’s transform them into something that feels like a **mini-lab notebook** with clear story flow, tables, and highlights 🚀.
 
-### 💻 Simulation & Synthesis
-
-
-
-```bash
-yosys 
-    yosys -s Test_Synth.ys
-```
-
-```bash
-iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v mux_generate_GLS.v tb_mux_generate.v
-```
-
-### 📊 Results
-
-![MUX GLS vs RTL](Images/Task3_mux_GLSvsRTL_simulation.png)
-![MUX Netlist](Images/mux_generate_show.png)
-
-### ✅ Conclusion
-
-* RTL and GLS simulations match, proving structural correctness.
-* `for-generate` provides scalable hardware design.
+Here’s a polished version:
 
 ---
 
-## 📌 Task 4 – DEMUX Using `generate`
+# 📌 Task 3 – MUX Using `for-generate`
 
-### 💻 Commands
+## 🛠️ Flow
 
+| Step | Command                                                                                                                           | Purpose                    |
+| ---- | --------------------------------------------------------------------------------------------------------------------------------- | -------------------------- |
+| 1️⃣  | `yosys -s Test_Synth.ys`                                                                                                          | Run Yosys synthesis script |
+| 2️⃣  | `iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v mux_generate_GLS.v tb_mux_generate.v` | Simulate GLS vs RTL        |
+
+---
+
+## 📊 Results
+
+* ✅ **RTL and GLS waveforms match** → proves correctness of design.
+* ⚡ **`for-generate` loop instantiates MUXes cleanly**, avoiding repetitive manual code.
+
+📷 Simulation vs GLS:
+![MUX GLS vs RTL](Images/Task3_mux_GLSvsRTL_simulation.png)
+
+📷 Synthesized Netlist:
+![MUX Netlist](Images/mux_generate_show.png)
+
+---
+
+## 🎯 Conclusion
+
+* `for-generate` = **scalable hardware construction**.
+* Matching RTL & GLS confirms design **structural equivalence**.
+
+---
+
+# 📌 Task 4 – DEMUX Using `generate`
+
+## 🛠️ Flow
+
+* GLS requires including **primitives** + **cell models** during simulation:
 
 ```bash
 iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v demux_generate_GLS.v tb_demux_generate.v
 ```
 
+---
 
-### 📊 Results
+## 📊 Results
 
+* ✅ **RTL and GLS outputs align perfectly**.
+* 📐 Confirms that `generate` statements can **scale DEMUX instantiation** without error.
+
+📷 Simulation (GLS vs RTL):
 ![DEMUX GLS vs RTL](Images/Task4_demux_GLS_vs_RTL_simulation.png)
-
-### ✅ Conclusion
-
-The demux functions correctly in both RTL and GLS simulations.
 
 ---
 
-## 📌 Task 5 – Ripple Carry Adder (RCA)
+## 🎯 Conclusion
 
-### 💻 Simulation & Synthesis
+* DEMUX behaves correctly in both RTL & GLS.
+* `generate` → **cleaner, modular code** while preserving correctness.
 
+---
 
+# 📌 Task 5 – Ripple Carry Adder (RCA)
+
+## 🛠️ Flow
 
 ```bash
 iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v rca_GLS.v tb_rca.v
 ```
 
-### 📊 Results
+---
 
+## 📊 Results
+
+* ✅ **RCA RTL vs GLS simulation matches** → functional correctness maintained.
+* 🔧 Yosys synthesis maps RCA into **standard cell adders + carry chain**.
+
+📷 Simulation (GLS + RTL):
 ![RCA GLS](Images/Task5_rca_GLS_and_RTLsimulaltion.png)
+
+📷 Synthesized Netlist:
 ![RCA Netlist](Images/RippleCarryAdder_show.png)
 
-### ✅ Conclusion
+---
 
-* RCA shows expected behavior in GLS vs RTL simulations.
-* Confirms correct synthesis of arithmetic circuits.
+## 🎯 Conclusion
+
+* RCA works exactly as expected in both RTL & GLS.
+* Confirms **Yosys synthesis of arithmetic circuits** is robust.
+---
 
 
 
 
+Perfect 👌 Your **Theory Notes** already look very solid, but I see what you mean—they could be made **more engaging and story-like** with highlights, icons, and clearer flow. Let’s polish them into something that feels like a **study guide + quick reference handbook** 🚀.
 
+Here’s the upgraded version:
 
-# 📘 Theory Notes (With Tables)
+---
+
+# 📘 Theory Notes (Interactive with Tables)
+
+---
 
 ## 🎭 1. Behavioral Synthesis
 
-* **What it is:**
-  Converts behavioral Verilog (`always`, `if`, `case`) into RTL netlists (multiplexers, registers, FSMs).
-* **Why important:**
-  Bridges the gap between *high-level intent* and *actual hardware structures*.
+| 🔎 What            | 💡 Explanation                                                                                        |
+| ------------------ | ----------------------------------------------------------------------------------------------------- |
+| **Definition**     | Converts behavioral Verilog (`always`, `if`, `case`) into RTL netlists (muxes, registers, FSMs).      |
+| **Why important?** | Bridges the gap between **high-level intent** (what you want) and **actual hardware** (what you get). |
 
 ---
 
 ## ⏱️ 2. Timing Basics
 
-* **Setup Time (Tsetup):**
-  Data must be stable *before* the clock edge. Violated if path delay is **too long**.
-* **Hold Time (Thold):**
-  Data must remain stable *after* the clock edge. Violated if path delay is **too short**.
-* **Clock Frequency:**
-  Determined by **critical path delay**.
-* **Cell Choice Tradeoff:**
+| Concept                 | Meaning                            | Violation When…                        |
+| ----------------------- | ---------------------------------- | -------------------------------------- |
+| **Setup Time (Tsetup)** | Data stable **before** clock edge  | Path delay is **too long**             |
+| **Hold Time (Thold)**   | Data stable **after** clock edge   | Path delay is **too short**            |
+| **Clock Frequency**     | Limited by **critical path delay** | Longest combinational path is too slow |
 
-  * ⚡ Faster cells → better setup, worse hold, more power.
-  * 🐢 Slower cells → better hold, less power, may fail setup.
+⚖️ **Cell tradeoff:**
+
+* ⚡ *Fast cells* → better setup, worse hold, more power.
+* 🐢 *Slow cells* → better hold, less power, but may fail setup.
 
 ---
 
 ## 📚 3. Liberty File (`.lib`)
 
-* Stores **timing, power, functionality** of standard cells.
-* Used for:
+| 🔎 Stores         | 💡 Details                      |
+| ----------------- | ------------------------------- |
+| **Timing**        | Setup, hold, propagation delays |
+| **Power**         | Dynamic & leakage               |
+| **Functionality** | Boolean functions, FF types     |
 
-  * RTL → Gate mapping
-  * Delay & power estimation
-  * Flip-flop mapping with `dfflibmap`
-* Note: Different libraries may define **different types of flops** (async reset, sync reset, enable, scan).
+✅ Used for:
+
+* RTL → Gate mapping
+* Power/timing estimation
+* Flip-flop mapping with `dfflibmap`
 
 ---
 
 ## 🏗️ 4. Hierarchical vs Flat Synthesis
 
-| Mode                                      | Description                          | When to Use                                              |
-| ----------------------------------------- | ------------------------------------ | -------------------------------------------------------- |
-| **Hierarchical** (`synth -top submodule`) | Keeps module boundaries              | When submodule is instantiated many times (saves effort) |
-| **Flat** (`synth_flat`)                   | Flattens into a single-level netlist | When global optimizations are needed                     |
+| Mode             | Description                                         | Best Use                         |
+| ---------------- | --------------------------------------------------- | -------------------------------- |
+| **Hierarchical** | Keeps module boundaries (`synth -top submodule`)    | When submodules are reused often |
+| **Flat**         | Flattens everything into one netlist (`synth_flat`) | For **global optimization**      |
 
 ---
 
 ## ⚡ 5. Stacked PMOS
 
-* ❌ Stacking PMOS transistors increases resistance.
-* 🚫 Leads to slower switching, degraded performance.
+* ❌ Stacking increases **resistance**.
+* 🚫 Leads to **slower switching** and degraded performance.
 
 ---
 
 ## 🔧 6. Submodule-Level Synthesis
 
-* When reusing modules:
+* Reuse by synthesizing **one module once**:
 
-  ```tcl
-  synth -top submodule_name
-  ```
+```tcl
+synth -top submodule_name
+```
 
-  → Synthesized once, reused across hierarchy.
-* **Future Work 💡:**
-  Stitch different synthesized modules via:
-
-  * `hierarchy -libdir`
-  * Linking gate-level netlists
+* Future idea: stitch multiple netlists with `hierarchy -libdir`.
 
 ---
 
-## 🧩 7. Flip-Flops & Mapping Flow
-
-Typical flow for mapping generic `$dff` to library flops:
+## 🧩 7. Flip-Flop Mapping Flow
 
 ```tcl
-# Step 1: Load library
 read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-# Step 2: Read design
-read_verilog flop_name.v
-synth -top flop_name
-
-# Step 3: Map flip-flops
-dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib   # replaces $dff with real flops
-
-# Step 4: Optimize
+read_verilog flop.v
+synth -top flop
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
+
+👉 `$dff` → replaced with **real flops from `.lib`**.
 
 ---
 
 ## 📈 8. Optimization Experiments
 
-### 🔹 Example 1: Multipliers (`mul2.v`, `mult_8.v`)
-
-* Yosys applies:
-
-  * Constant folding
-  * Resource sharing
-  * Gate-level simplification
+| Example                                  | What Yosys Does                                    |
+| ---------------------------------------- | -------------------------------------------------- |
+| **Multiplier (`mul2.v`, `mult_8.v`)**    | Constant folding, resource sharing, simplification |
+| **Constant propagation (`opt_check.v`)** | Removes unused logic/nets                          |
 
 ---
-
-### 🔹 Example 2: Constant Propagation (`opt_check.v`)
-
-
 
 ## 📝 9. Quick Command Reference
 
 ```tcl
-# Load standard cell library
+# Load cell library
 read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
-# Read Verilog
+# Read design
 read_verilog design.v
 
-# Synthesize top module
+# Run synthesis
 synth -top design
 
-# Map flip-flops
+# Map flops
 dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 
-# Optimize netlist
+# Optimize
 abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 opt_clean -purge
 ```
 
 ---
 
+## ⏱️ Why Gate-Level Simulation (GLS)?
 
-
-
-
-## ⏱️ Why Gate Level Simulation (GLS)?
-
-| 🔎 Aspect        | 💡 Explanation                                                       |
-| ---------------- | -------------------------------------------------------------------- |
-| **Purpose**      | Validate synthesized netlist matches RTL functionality.              |
-| **Timing check** | If delay info is available, GLS ensures timing requirements are met. |
-| **Why needed**   | RTL sim = “intent”, GLS sim = “real hardware gates + flops”.         |
-| **Without GLS**  | You risk simulation–synthesis mismatches going unnoticed.            |
+| Aspect           | Explanation                                        |
+| ---------------- | -------------------------------------------------- |
+| **Purpose**      | Confirms **RTL vs Netlist functional match**       |
+| **Timing Check** | If delays exist, validates setup/hold              |
+| **Why needed**   | RTL sim = *intent*, GLS sim = *real gates & flops* |
+| **Without GLS**  | Risk of sim–synth mismatch 🛑                      |
 
 ---
 
@@ -423,12 +438,11 @@ always @(*) begin
 end
 ```
 
-| 🔎 Step               | 💡 Explanation                                          |
-| --------------------- | ------------------------------------------------------- |
-| **Execution order**   | `q` gets **old** `q0` first → then `q0` updated to `d`. |
-| **Simulation effect** | `q` lags by one cycle vs `q0`.                          |
-| **Synthesis effect**  | Needs storage for both old `q0` and new `q0`.           |
-| **Result**            | Two flops (one for `q0`, one for `q`).                  |
+| Step                | Explanation                               |
+| ------------------- | ----------------------------------------- |
+| **Execution order** | `q` sees **old** `q0` → then `q0` updates |
+| **Effect**          | `q` lags by 1 cycle                       |
+| **Synthesis**       | Needs storage for both → **2 flops**      |
 
 ---
 
@@ -441,18 +455,20 @@ always @(*) begin
 end
 ```
 
-| 🔎 Step               | 💡 Explanation                                        |
-| --------------------- | ----------------------------------------------------- |
-| **Execution order**   | `q0` updated first, then `q` takes new value of `q0`. |
-| **Simulation effect** | `q` and `q0` update together, no lag.                 |
-| **Synthesis effect**  | Only one storage element for `q0`.                    |
-| **Result**            | One flop total.                                       |
+| Step                | Explanation                             |
+| ------------------- | --------------------------------------- |
+| **Execution order** | `q0` updates first → `q` uses new value |
+| **Effect**          | No lag, only one flop needed            |
+| **Result**          | ✅ One flop total                        |
 
-👉 **Rule of Thumb:** Blocking (`=`) causes sequential dependency, non-blocking (`<=`) avoids it.
+👉 Rule of Thumb:
+
+* `=` (blocking) → sequential dependency
+* `<=` (non-blocking) → parallel updates
 
 ---
 
-## ⚠️ Blocking Caveat Example
+## ⚠️ Blocking Caveat
 
 ```verilog
 always @(*) begin
@@ -461,12 +477,12 @@ always @(*) begin
 end
 ```
 
-| 🔎 Step                | RTL Simulation View                              | Synthesis View           |            |
-| ---------------------- | ------------------------------------------------ | ------------------------ | ---------- |
-| **Order of execution** | `d` uses **old** value of `x`, then `x` updates. | Tools see \`d = (a       | b) & c;\`. |
-| **Effect**             | `d` lags one cycle in sim.                       | `d` directly tied to \`a | b`and`c\`. |
-| **Mismatch**           | Yes → sim ≠ synthesized hardware.                |                          |            |
-| **Fix**                | Use non-blocking (`<=`) or reorder carefully.    |                          |            |
+| View         | What Happens                  |          |
+| ------------ | ----------------------------- | -------- |
+| **RTL sim**  | `d` uses **old x**, mismatch  |          |
+| **Synth**    | Tools optimize → \`d = (a     | b) & c\` |
+| **Mismatch** | Yes → sim ≠ hardware          |          |
+| **Fix**      | Use `<=` or reorder carefully |          |
 
 ---
 
@@ -476,19 +492,18 @@ end
 case(sel)
   2'b00: y = i0;
   2'b01: y = i1;
-  // Missing 2'b10, 2'b11
+  // Missing others
 endcase
 ```
 
-| 🔎 Situation           | 💡 Explanation                                                         |
-| ---------------------- | ---------------------------------------------------------------------- |
-| **Missing assignment** | If `sel=10` or `11`, `y` not updated.                                  |
-| **Hardware solution**  | Must “remember” old value of `y`.                                      |
-| **Inference**          | Synthesis inserts a **latch**.                                         |
-| **Problem**            | Latches are level-sensitive, harder for timing closure, cause hazards. |
-| **Fix**                | Always cover all cases or add `default`.                               |
+| Problem            | Why                                       |
+| ------------------ | ----------------------------------------- |
+| Missing assignment | `y` not updated → must remember old value |
+| Hardware fix       | Synthesis infers a **latch**              |
+| Issue              | Latches = level-sensitive, cause hazards  |
+| Fix                | Cover all cases OR add `default`          |
 
-✅ Example fix:
+✅ Corrected:
 
 ```verilog
 case(sel)
@@ -502,13 +517,16 @@ endcase
 
 ---
 
-## 📝 Key Lessons (Quick Table Recap)
+## 📝 Key Lessons (Quick Recap)
 
-| Concept                  | Bad Practice                        | Correct Practice                        |
-| ------------------------ | ----------------------------------- | --------------------------------------- |
-| Blocking assignments     | `q = q0; q0 = d;` (lag, 2 flops)    | Use proper order or use `<=`.           |
-| Non-blocking assignments | —                                   | `q0 <= d; q <= q0;` (parallel updates). |
-| Incomplete case/if       | Leaves signal unassigned → latch    | Add `default` or cover all cases.       |
-| GLS necessity            | RTL ≠ Synthesis (possible mismatch) | GLS confirms functional equivalence.    |
+| Concept            | Bad Practice                     | Correct Practice                         |
+| ------------------ | -------------------------------- | ---------------------------------------- |
+| Blocking assigns   | `q = q0; q0 = d;` (lag, 2 flops) | Use `<=` or reorder                      |
+| Non-blocking       | —                                | `q0 <= d; q <= q0;` (parallel)           |
+| Incomplete case/if | Leads to latch                   | Always add `default`                     |
+| GLS                | Ignored                          | Always run GLS to confirm RTL = hardware |
 
 ---
+
+
+
