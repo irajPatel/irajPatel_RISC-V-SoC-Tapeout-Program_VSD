@@ -240,11 +240,11 @@ show -format png -prefix mux_generate_show
 
 ## 📌 Task 2 – Constant DFF Mapping & GLS
 
-### 🎯 Objective
+### 🔎 Objective
 
-Synthesize constant-driven flip-flops (`const4.v`, `const5.v`) and validate functionality using GLS.
+Perform Yosys synthesis of constant-driven DFFs (`const4.v`, `const5.v`) and simulate using Icarus Verilog.
 
-### ⚙️ Yosys Flow
+### 💻 Yosys Flow
 
 ```bash
 yosys
@@ -256,9 +256,9 @@ abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog const4_net.v
 ```
 
-(Repeat the same for `const5.v`)
+Repeat for `const5.v`.
 
-### 🖥️ Icarus Verilog Flow
+### 💻 Icarus Verilog Flow
 
 ```bash
 iverilog -o const4_sim const4.v tb_const4.v
@@ -268,79 +268,83 @@ gtkwave dump.vcd
 
 ### 📊 Results
 
-* ✅ Constant values propagate correctly through DFF mapping.
-* ✅ GLS matches RTL functionality.
-* ⚠️ Timing not modeled (since `.lib` used here doesn’t include delays).
+![Const4 Simulation](Images/Task2_dff_const4_show_iverilog_simuatlion.png)
+![Const5 Simulation](Images/Task2_dff_const5_iverilog_simualtion.png)
+![Const5 Netlist](Images/Task2_dff_const5_show.png)
+
+### ✅ Conclusion
+
+* Constants are correctly propagated through DFF mapping.
+* GLS validates functionality but timing is not modeled (since `.lib` models are not delay-annotated).
 
 ---
 
 ## 📌 Task 3 – MUX Using `for-generate`
 
-### ⚙️ Synthesis
+### 💻 Simulation & Synthesis
+
+
 
 ```bash
-yosys -s Test_Synth.ys
+yosys 
+    yosys -s Test_Synth.ys
 ```
 
-### 🖥️ GLS Simulation
-
 ```bash
-iverilog ../my_lib/verilog_models/primitives.v \
-        ../my_lib/verilog_models/sky130_fd_sc_hd.v \
-        mux_generate_GLS.v tb_mux_generate.v
+iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v mux_generate_GLS.v tb_mux_generate.v
 ```
 
 ### 📊 Results
 
-* ✅ RTL vs GLS outputs match → correct structural mapping.
-* ✅ `for-generate` simplifies scalable multiplexer design.
+![MUX GLS vs RTL](Images/Task3_mux_GLSvsRTL_simulation.png)
+![MUX Netlist](Images/mux_generate_show.png)
+
+### ✅ Conclusion
+
+* RTL and GLS simulations match, proving structural correctness.
+* `for-generate` provides scalable hardware design.
 
 ---
 
 ## 📌 Task 4 – DEMUX Using `generate`
 
-### 🖥️ GLS Simulation
+### 💻 Commands
 
-### ⚙️ Synthesis
 
 ```bash
-yosys -s Test_Synth.ys
+iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v demux_generate_GLS.v tb_demux_generate.v
 ```
-### 🖥️ GLS Simulation
-```bash
-iverilog ../my_lib/verilog_models/primitives.v \
-        ../my_lib/verilog_models/sky130_fd_sc_hd.v \
-        demux_generate_GLS.v tb_demux_generate.v
-```
+
 
 ### 📊 Results
 
-* ✅ DEMUX works as expected in both RTL & GLS.
-* ✅ Confirms correct mapping of generate-based designs.
+![DEMUX GLS vs RTL](Images/Task4_demux_GLS_vs_RTL_simulation.png)
+
+### ✅ Conclusion
+
+The demux functions correctly in both RTL and GLS simulations.
 
 ---
 
 ## 📌 Task 5 – Ripple Carry Adder (RCA)
 
-### ⚙️ Synthesis
+### 💻 Simulation & Synthesis
+
+
 
 ```bash
-yosys -s Test_Synth.ys
-```
-
-### 🖥️ GLS Simulation
-
-```bash
-iverilog ../my_lib/verilog_models/primitives.v \
-        ../my_lib/verilog_models/sky130_fd_sc_hd.v \
-        rca_GLS.v tb_rca.v
+iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_fd_sc_hd.v rca_GLS.v tb_rca.v
 ```
 
 ### 📊 Results
 
-* ✅ RCA shows correct addition in both RTL & GLS.
-* ✅ Confirms proper synthesis of arithmetic circuits.
+![RCA GLS](Images/Task5_rca_GLS_and_RTLsimulaltion.png)
+![RCA Netlist](Images/RippleCarryAdder_show.png)
 
+### ✅ Conclusion
+
+* RCA shows expected behavior in GLS vs RTL simulations.
+* Confirms correct synthesis of arithmetic circuits.
 
 # 📘 Theory Notes (With Tables)
 
