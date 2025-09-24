@@ -288,13 +288,9 @@ iverilog .../my_lib/verilog_models/primitives.v ../my_lib/verilog_models/sky130_
 
 
 
-Perfect 👌 Your **Theory Notes** already look very solid, but I see what you mean—they could be made **more engaging and story-like** with highlights, icons, and clearer flow. Let’s polish them into something that feels like a **study guide + quick reference handbook** 🚀.
 
-Here’s the upgraded version:
 
----
-
-# 📘 Theory Notes (Interactive with Tables)
+# 📘 Theory Notes 
 
 ---
 
