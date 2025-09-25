@@ -79,8 +79,8 @@ This ensures post-synthesis netlist behaves **identically** to RTL.
 | Stage                                  | Output                                                                         |
 | -------------------------------------- | ------------------------------------------------------------------------------ |
 | **Synthesized Netlist (Yosys)**        | ![Yosys Gate-Level Netlist](Project/src/FIR_Filters_GLS_show.png)              |
-| **RTL Simulation Output**              | ![RTL Simulation - FIR Filter Output](week1/Images/Applied_filter.png)         |
-| **Gate-Level Simulation (GLS) Output** | ![GLS Simulation - Post-Synthesis Output](week1/Images/Applied_filter_GLS.png) |
+| **RTL Simulation Output**              | ![RTL Simulation - FIR Filter Output](Week1/Images/Applied_filter.png)         |
+| **Gate-Level Simulation (GLS) Output** | ![GLS Simulation - Post-Synthesis Output](Week1/Images/Applied_filter_GLS.png) |
 
 
 ---
