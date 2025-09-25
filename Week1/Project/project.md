@@ -74,13 +74,14 @@ This ensures post-synthesis netlist behaves **identically** to RTL.
 
 ---
 
-## 📊 Results
 
-| Stage                                         | Output                                                                       |
-| --------------------------------------------- | ---------------------------------------------------------------------------- |
-| **Yosys Netlist View**                        | ![filter SYNTHEIS](week1/Project/src/FIR_Filters_GLS_show.png)               |
-| **RTL Simulation** (behavioral filter output) | ![iverilog simulation](week1/Images/Applied_filter.png)                      |
-| **GLS Simulation** (post-synthesis output)    | ![ater syntheeis iverislo g simualtio ](week1/Images/Applied_filter_GLS.png) |
+
+| Stage                                  | Output                                                                         |
+| -------------------------------------- | ------------------------------------------------------------------------------ |
+| **Synthesized Netlist (Yosys)**        | ![Yosys Gate-Level Netlist](Project/src/FIR_Filters_GLS_show.png)              |
+| **RTL Simulation Output**              | ![RTL Simulation - FIR Filter Output](week1/Images/Applied_filter.png)         |
+| **Gate-Level Simulation (GLS) Output** | ![GLS Simulation - Post-Synthesis Output](week1/Images/Applied_filter_GLS.png) |
+
 
 ---
 
