@@ -2,6 +2,16 @@
 # 🚀 Week1  RTL-GLS 
 
 
+
+To start the lab, clone the workshop repository from GitHub:
+
+```bash
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop
+cd sky130RTLDesignAndSynthesisWorkshop
+````
+
+
+
 # 📌 Task 1 – Yosys Optimization with `opt_clean -purge`
 
 ## 🎯 Objective
