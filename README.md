@@ -53,23 +53,6 @@ This repository documents my **week-by-week progress** with tasks inside each we
 * [**Future work:**](Week1/project.md##-Future-Work) Extend filter designs to higher orders and implement real-time signal processing on FPGA.
 
 
----
-
-Here’s your updated **Week 1 Key Learnings** section with the additional line for the synthesis error fix, including a Markdown link to your Week1 README error challenge:
-
-### 🌟 Key Learnings from Week 1
-
-* Learned **Yosys synthesis flow**, RTL vs GLS verification, and scalable Verilog constructs.
-* Synthesized arithmetic circuits and optimized designs using ABC and Icarus Verilog with GTKWave.
-* [**Applied knowledge:**](Week1/project.md) designed a Verilog Moving Average Filter, synthesized with Yosys, and verified via GLS.
-
-* [**Future work:**](Week1/project.md##-Future-Work) Extend filter designs to higher orders and implement real-time signal processing on FPGA.
-
-I can also **make the error line more eye-catching with emojis** to match your other sections if you want. Do you want me to do that?
-
-
-
-
 
 ## 🙏 Acknowledgment  
 
