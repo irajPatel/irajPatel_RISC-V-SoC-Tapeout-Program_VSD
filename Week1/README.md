@@ -221,6 +221,27 @@ Here’s a polished version:
 
 ---
 
+
+
+
+
+### ⚠️ Challenge & Clever Fix 🔧💡
+
+During synthesis, Yosys stumbled on a **non-existent “_D_LATCH_P” latch** 🚫⚡ while mapping, causing simulation failures 😬. To tackle this, I **explored the SkyWater primitive library** 🔍📚 and found a similar latch performing the same function ✅✨.
+
+```verilog
+sky130_fd_sc_hd__udp_dlatch$lP _2_ (
+    .D(_0_),
+    .GATE(1'h1),
+    .Q(y)
+);
+```
+
+🚀 **Result:** The design **simulated flawlessly** 🎯🎉, turning a roadblock into a **hands-on learning experience** 🧠💪.
+
+
+
+
 ## 📊 Results
 
 * ✅ **RTL and GLS waveforms match** → proves correctness of design.
@@ -228,6 +249,8 @@ Here’s a polished version:
 
 📷 Simulation vs GLS:
 ![MUX GLS vs RTL](Images/Task3_mux_GLSvsRTL_simulation.png)
+
+
 
 📷 Synthesized Netlist:
 ![MUX Netlist](Images/mux_generate_show.png)
