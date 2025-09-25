@@ -48,7 +48,7 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 * Learned **Yosys synthesis flow**, RTL vs GLS verification, and scalable Verilog constructs.
 * Synthesized arithmetic circuits and optimized designs using ABC and Icarus Verilog with GTKWave.
-* [**Solved synthesis error:**](Week1/README.md#-task-3--mux-using-for-generate) Fixed a missing latch mapping by instantiating a similar **SkyWater primitive**, enabling successful simulation.
+* [**Solved synthesis error:**](Week1/README.md#-task-3--mux-using-for-generate) Fixed a missing latch mapping by instantiating a similar **SkyWater primitive**, enabling  simulation.
 * [**Applied knowledge:**](Week1/project.md) designed a Verilog Moving Average Filter, synthesized with Yosys, and verified via GLS.
 * [**Future work:**](Week1/project.md##-Future-Work) Extend filter designs to higher orders and implement real-time signal processing on FPGA.
 
