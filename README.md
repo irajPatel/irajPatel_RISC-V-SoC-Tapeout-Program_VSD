@@ -48,7 +48,7 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 * Learned **Yosys synthesis flow**, RTL vs GLS verification, and scalable Verilog constructs.
 * Synthesized arithmetic circuits and optimized designs using ABC and Icarus Verilog with GTKWave.
-* Applied knowledge to design a [**Moving Average Filter in Verilog**](Week1/project.md), performed Yosys synthesis, and verified with GLS simulation.
+* [**Applied knowledge**](Week1/project.md) to design a **Moving Average Filter in Verilog**, performed Yosys synthesis, and verified with GLS simulation.
 * [**Future work:**](Week1/project.md##-Future-Work) Extend filter designs to higher orders and implement real-time signal processing on FPGA.
 
 
