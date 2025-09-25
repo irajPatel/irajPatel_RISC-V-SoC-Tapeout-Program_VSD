@@ -42,11 +42,14 @@ This repository documents my **week-by-week progress** with tasks inside each we
 | [**Task 5**](Week1/README.md#-task-5--ripple-carry-adder-rca) | ➕ Ripple Carry Adder synthesis & GLS validation                           | ✅ Done |
 
 
+
+
 ### 🌟 Key Learnings from Week 1
 
-* Mastered **Yosys synthesis flow**: liberty loading, flattening, DFF/latch mapping, and ABC optimization.  
-* Verified **RTL vs GLS correctness** using Icarus Verilog and GTKWave.  
-* Explored **scalable design constructs** (`generate`, `for-generate`) and synthesized arithmetic circuits (RCA).  
+* Learned **Yosys synthesis flow**, RTL vs GLS verification, and scalable Verilog constructs.
+* Synthesized arithmetic circuits and optimized designs using ABC and Icarus Verilog with GTKWave.
+* Applied knowledge to design a [**Moving Average Filter in Verilog**](Week1/project.md), performed Yosys synthesis, and verified with GLS simulation.
+* [**Future work:**](Week1/project.md#-Future-Work) Extend filter designs to higher orders and implement real-time signal processing on FPGA.
 
 
 ---
