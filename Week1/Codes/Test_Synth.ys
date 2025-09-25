@@ -22,10 +22,8 @@ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 # Remove unused stuff
 clean
 
-# Optional: flatten hierarchy
-flatten
-
 # Write gate-level netlist
 write_verilog -noattr mux_generate_GLS.v
 
 show -format png -prefix  mux_generate_show
+
