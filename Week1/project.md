@@ -92,7 +92,7 @@ This ensures post-synthesis netlist behaves **identically** to RTL.
 
 By validating at both RTL and GLS levels, we confirm that the **moving average FIR filter** works consistently from **high-level Verilog to gate-level hardware implementation**.
 
-
+##  Future Work
 | 🔮 Future Work | 🚀 Description                                                             |
 | -------------- | -------------------------------------------------------------------------- |
 | **DFT**        | Analyze signal frequency components with **Discrete Fourier Transform**.   |
