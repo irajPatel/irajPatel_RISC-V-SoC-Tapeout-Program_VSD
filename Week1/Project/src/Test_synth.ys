@@ -1,0 +1,32 @@
+# Load the Sky130 liberty file (timing + function info)
+read_liberty -lib ../../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Load your RTL design
+read_verilog FIR_Filters.v
+
+
+
+# Generic synthesis without flattening
+synth -top FIR_Filters 
+
+opt_clean -purge
+
+
+# Map DFFs and latches to technology cells
+dfflibmap -liberty ../../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+opt_clean -purge
+
+
+# Technology mapping with ABC
+abc -liberty ../../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Remove unused stuff
+clean
+
+
+
+# Write gate-level netlist
+write_verilog -noattr FIR_Filters_GLS.v
+
+show -format png -prefix FIR_Filters_GLS_show FIR_Filters
