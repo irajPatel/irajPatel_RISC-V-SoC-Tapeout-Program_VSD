@@ -225,7 +225,7 @@ Here’s a polished version:
 
 
 
-### ⚠️ Challenge & Clever Fix 🔧💡
+# ⚠️ ERROR & Clever Fix 🔧💡
 
 During synthesis, Yosys stumbled on a **non-existent “_D_LATCH_P” latch** 🚫⚡ while mapping, causing simulation failures 😬. To tackle this, I **explored the SkyWater primitive library** 🔍📚 and found a similar latch performing the same function ✅✨.
 
