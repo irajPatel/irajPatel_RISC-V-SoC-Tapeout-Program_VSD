@@ -1,10 +1,5 @@
-````markdown
+
 # 🌟 Fundamentals of System-on-Chip (SoC) Design  
-
-![SoC Banner](https://img.shields.io/badge/SoC-Design-Fundamentals-blue?style=for-the-badge&logo=semiconductor-manufacturing)  
-![BabySoC](https://img.shields.io/badge/BabySoC-Simplified_Model-ff69b4?style=for-the-badge&logo=circuitverse)  
-![Learning](https://img.shields.io/badge/Learning-RTL%20%7C%20Physical%20Design-brightgreen?style=for-the-badge&logo=bookstack)  
-
 ---
 
 ## 🧐 What is a System-on-Chip (SoC)?  
@@ -268,7 +263,12 @@ The CPU runs a small program (13 instructions). The goal:
 
 ---
 
-## ⚡ CPU → DAC Connection
+
+## 📈 Pre_synth_sim Waveform
+
+![Waveform](Images/Task2_Ravi_pre_synth_simualtion_final.png)
+
+## ⚡Observation  (CPU → DAC Connection)
 
 ### CPU Side (`rvmyth.v`)
 
@@ -297,26 +297,46 @@ OUT <= VREFL + ($itor(Dext) / 1023.0) * (VREFH - VREFL);
 | `VREFL` | Low reference voltage  |
 | `OUT`   | Analog output voltage  |
 
-**Formula:**
+$V_{\mathrm{OUT}} = \frac{r_{17}}{1023} \times (V_{\mathrm{REFH}} - V_{\mathrm{REFL}})$
 
-[
-V_{OUT} = \frac{r17}{1023} \times (VREFH - VREFL)
-]
+### ⚖️ **Numerics for DAC conversion**
 
----
+##### scaling:
 
-## 📊 Example Output Values (VREF = 1.0 V)
+$$
+V_{OUT} = \frac{r_{17}}{1023} \times V_{REF\_SPAN}
+\quad (\text{with } V_{REF\_SPAN} = 1.0\ \text{V})
+$$
+
+
+
+##### For **r17 = 903**:
+
+$$
+V_{OUT} = \frac{903}{1023} \times 1.0
+= 0.88221\ \text{V}
+$$
+
+
+##### For the peak **r17 = 946**:
+
+$$
+V_{OUT} = \frac{946}{1023} \times 1.0
+= 0.92502\ \text{V}
+$$
+
+
+
+##### 📊 Example Output Values (VREF = 1.0 V)
 
 | r17 Value  | DAC Output Voltage |
 | ---------- | ------------------ |
 | 903        | 0.882 V            |
 | 946 (peak) | 0.925 V            |
 
----
 
-## 📈 Expected Waveform
 
-![Waveform](Images/Task2_Ravi_pre_synth_simualtion_final.png)
+
 
 👉 Switch `OUT` format → **Analog Step** in GTKWave for DAC output visualization.
 
@@ -338,7 +358,6 @@ V_{OUT} = \frac{r17}{1023} \times (VREFH - VREFL)
 
 💡 BabySoC isn’t just a project — it’s a **sandbox for future chip designers 🚀**.
 
----
 
 ## 📚 Resources
 
@@ -347,5 +366,5 @@ V_{OUT} = \frac{r17}{1023} \times (VREFH - VREFL)
 * 🛠 [VSD SoC Journey – Spatha (Day 5)](https://github.com/spatha0011/spatha_vsd-hdp/tree/main/Day5)
 * 🌱 [VSDBabySoC – Manili](https://github.com/manili/VSDBabySoC)
 
-```
+
 
