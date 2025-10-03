@@ -57,9 +57,9 @@ This repository documents my **week-by-week progress** with tasks inside each we
 | Task       | Description | Status |
 | ---------- | ----------- | ------ |
 | [**Task 1**](Week2/README.md#-fundamentals-of-system-on-chip-soc-design) | 📘 Write-up on SoC fundamentals | ✅ Done |
-| [**Task 2**](Week2/README.md#-vsdbabysoc--a-tiny-but-powerful-risc-v-soc) | 📝 BabySoC simulation logs | ✅ Done |
+| [**Task 2**](Week2/README.md#-vsdbabysoc--a-tiny-but-powerful-risc-v-soc) | 📝 VSDBabySoC  | ✅ Done |
 | [**Task 3**](Week2/README.md#-the-instruction-program-driving-babysoc) | 📊 Understanding of  RVMYTH core  | ✅ Done |
-| [**Task 4**](Week2/README.md#-pre_synth_sim-waveform) | ✍️ Waveform screenshots & explanations | ✅ Done |
+| [**Task 4**](Week2/README.md#-pre_synth_sim-waveform) | ✍️Pre synthesis Waveform  & explanations | ✅ Done |
 
 ---
 
