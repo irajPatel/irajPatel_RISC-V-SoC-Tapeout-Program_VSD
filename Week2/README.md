@@ -281,6 +281,11 @@ $$
 
 ---
 
+### 🚀 Future Work
+
+Currently, the instructions in the CPU are hardcoded. In the future, I plan to develop a firmware workflow that allows writing programs in C. A Python-based tool will then convert the compiled binary into hexadecimal format, which can be loaded into the CPU memory. This will enable the CPU to execute instructions dynamically from memory, rather than relying on hardcoded instructions.
+
+
 ## 📚 Resources
 
 * 🔗 [RISC-V Core – Shivani Shah](https://github.com/shivanishah269/risc-v-core)
