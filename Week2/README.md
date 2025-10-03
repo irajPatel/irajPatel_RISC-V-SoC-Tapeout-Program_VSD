@@ -240,26 +240,29 @@ Instruction Memory → CPU Pipeline → Register r17 → DAC → Analog OUT
 
 
 
-### ⚡ CPU → DAC Mapping
+### ⚖️ Numerics for DAC Conversion
 
-**DAC formula**
-
+#### Scaling:
 $$
-V_{OUT} = \frac{r_{17}}{1023} \times V_{REF\_SPAN}
+V_{OUT} = \frac{r_{17}}{1023} \times V_{REF\_SPAN} \quad (\text{with } V_{REF\_SPAN} = 1.0\ \text{V})
 $$
 
-(for (V_{REF_SPAN} = 1.0 , \text{V}))
+#### For **r17 = 903**:
+$$
+V_{OUT} = \frac{903}{1023} \times 1.0 = 0.88221\ \text{V}
+$$
 
----
+#### For the peak **r17 = 946**:
+$$
+V_{OUT} = \frac{946}{1023} \times 1.0 = 0.92502\ \text{V}
+$$
 
-### 🔢  Outputs
+#### 📊 Example Output Values (VREF = 1.0 V)
 
-| r17 | (V_{OUT}) (V) |
-| --- | ------------- |
-| 903 | 0.882         |
-| 946 | 0.925         |
-
----
+| r17 Value | DAC Output Voltage |
+|-----------|------------------|
+| 903       | 0.882 V          |
+| 946 (peak)| 0.925 V          |
 
 
 
