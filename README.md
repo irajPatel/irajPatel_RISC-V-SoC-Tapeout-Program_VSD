@@ -67,7 +67,7 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 * Gained conceptual understanding of **SoC fundamentals** (CPU, memory, interconnect, peripherals).  
 * Learned how **BabySoC** simplifies SoC design concepts and verified its behavior using simulation + GTKWave.
-* **Future Work:** Add memory for instruction fetch and enable C programs to be compiled into hex for execution on BabySoC.  
+* [**Future Work:**](Week2/README.md#-future-work) Add memory for instruction fetch and enable C programs to be compiled into hex for execution on BabySoC.  
 
 
 
