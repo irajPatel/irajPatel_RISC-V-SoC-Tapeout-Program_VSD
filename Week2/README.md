@@ -1,61 +1,48 @@
 
 # 🌟 Fundamentals of System-on-Chip (SoC) Design  
----
+
 
 ## 🧐 What is a System-on-Chip (SoC)?  
 
-> ⚡ **A System-on-Chip (SoC) = an entire computer on a single chip!**  
-It combines **CPU, memory, I/O, GPU, DSP, and connectivity** into one tiny package.  
+⚡ **A System-on-Chip (SoC) is essentially an entire computer integrated into a single silicon chip.**  
+It brings together **CPU, memory, I/O interfaces, GPU, DSP, power management, and connectivity modules** into one highly optimized package.  
 
-🎯 **Why SoCs?**  
-- 📦 Compact → Fits in your phone, watch, IoT device  
-- 🔋 Efficient → Consumes less power  
-- ⚡ Fast → Shorter data travel = faster processing  
-- 💰 Cost-effective → One chip instead of many  
+### 🎯 Why SoCs?  
+- 📦 **Compactness** → Perfect for mobile & embedded devices  
+- 🔋 **Energy Efficiency** → Extends battery life in wearables, IoT, smartphones  
+- ⚡ **High Performance** → Reduced latency with on-chip communication  
+- 💰 **Cost-Effective** → One chip instead of multiple discrete components  
 
 ---
 
-## 🧩 Key Components of an SoC  
+## 🧩 Core Components of an SoC  
 
-| 🔧 Component | 📝 Function |
-|--------------|------------|
-| 🖥 **CPU** | Executes instructions, performs calculations |
-| 💾 **Memory (RAM/ROM/Flash)** | Temporary & permanent data storage |
-| 🔌 **I/O Ports** | Communicates with peripherals (USB, Camera, Sensors) |
-| 🎮 **GPU** | Handles graphics, visuals, and gaming |
-| 🎵 **DSP** | Processes signals (audio/video) |
-| 🔋 **Power Mgmt.** | Optimizes energy usage |
-| 📡 **Connectivity** | Wi-Fi, Bluetooth, Security modules |
+| 🔧 Component | 📝 Role in the System |
+|--------------|-----------------------|
+| 🖥 **CPU** | General-purpose processing & control logic |
+| 💾 **Memory (RAM/ROM/Flash)** | Stores instructions and runtime data |
+| 🔌 **I/O Interfaces** | Bridges external peripherals (USB, Camera, Sensors) |
+| 🎮 **GPU** | Handles rendering, imaging, and parallel workloads |
+| 🎵 **DSP** | Optimized for real-time signal and multimedia processing |
+| 🔋 **Power Management** | Ensures low-power operation and thermal balance |
+| 📡 **Connectivity** | Supports Wi-Fi, Bluetooth, 5G, and secure data transfer |
 
-💡 **Analogy**: Think of SoC as a **mini-city 🏙️** →  
-- CPU = City Hall 🏛️  
-- Memory = Library 📚  
-- I/O = Roads & Highways 🛣️  
-- GPU = Art District 🎨  
-- DSP = Concert Hall 🎼  
-- Power Mgmt. = Power Station ⚡  
+💡 **Analogy**: Think of an SoC as a **self-sustaining smart city 🏙️**:  
+- CPU = City Hall (decision-making)  
+- Memory = Library (knowledge storage)  
+- I/O = Roads & Highways (transportation)  
+- GPU = Art District (visual creativity)  
+- DSP = Concert Hall (sound & signals)  
+- Power Mgmt. = Power Station (energy supply)  
+- Connectivity = Airport/Ports (global communication)  
 
 ---
 
 ## 🔥 Types of SoCs  
 
-<details>
-<summary>🔧 Microcontroller-based SoC</summary>
-💡 Designed for **simple control tasks** (appliances, IoT).  
-✅ Low power, efficient, small.  
-</details>
-
-<details>
-<summary>⚡ Microprocessor-based SoC</summary>
-💡 Runs **OS & heavy tasks** (smartphones, tablets).  
-✅ High performance, multitasking.  
-</details>
-
-<details>
-<summary>🎯 Application-Specific SoC</summary>
-💡 Tailor-made for **specific domains** → AI 🧠, graphics 🎮, networking 🌐.  
-✅ Optimized speed & efficiency.  
-</details>  
+- 🔧 **Microcontroller-based SoC** → Small-scale, low-power control (IoT nodes, appliances)  
+- ⚡ **Microprocessor-based SoC** → Runs OS, multitasking (smartphones, tablets)  
+- 🎯 **Application-Specific SoC (ASIC SoC)** → Domain-optimized (AI accelerators, automotive, networking)  
 
 ---
 
@@ -63,67 +50,54 @@ It combines **CPU, memory, I/O, GPU, DSP, and connectivity** into one tiny packa
 
 ```mermaid
 graph LR
-    A[📘 Specification] --> B[📝 Functional Modelling]
-    B --> C[💻 RTL Design]
-    C --> D[⚙️ Verification & Simulation]
-    D --> E[🏭 Physical Design]
-    E --> F[📦 Fabrication & Testing]
-````
+    A[📘 Specification<br>System requirements, use-cases] --> B[📝 Functional Modelling<br>High-level behavioral models]
+    B --> C[💻 RTL Design<br>Register-Transfer Level coding]
+    C --> D[⚙️ Verification & Simulation<br>Functional validation]
+    D --> E[🏭 Physical Design<br>Layout, synthesis, place & route]
+    E --> F[📦 Fabrication & Testing<br>Silicon tape-out & validation]
+```
+
+---
+SoCs represent the **convergence of hardware and system intelligence on a single die**, enabling the modern era of **smartphones, wearables, AI accelerators, and IoT devices**.  
+
+## 👶⚡ VSDBabySoC – A Tiny but Powerful RISC-V SoC  
 
 ---
 
-## 👶⚡ VSDBabySoC – A Tiny but Powerful RISC-V SoC
+## 🌟 Introduction  
 
-![Badge](https://img.shields.io/badge/SoC-RISC_V_based-blue?style=for-the-badge\&logo=riscv)
-![Badge](https://img.shields.io/badge/Technology-Sky130-green?style=for-the-badge\&logo=opensourcehardware)
-![Badge](https://img.shields.io/badge/Includes-PLL%20%7C%20DAC%20%7C%20RVMYTH-orange?style=for-the-badge\&logo=verilog)
+In the world of chip design, even the simplest SoC can teach us **how digital and analog domains come together on silicon**.  
+**VSDBabySoC** is one such platform — a **compact educational SoC** that integrates three key blocks:  
 
-### 🌟 Introduction
+- 🧠 **RVMYTH Core** – a lightweight RISC-V CPU  
+- ⏱️ **8× PLL** – stable clock generation  
+- 🎚 **10-bit DAC** – digital-to-analog interface  
 
-**VSDBabySoC** is a **compact RISC-V-based SoC** that integrates:
+👉 The mission: **test open-source IPs in combination** and **demonstrate digital-to-analog control** on Sky130 technology.  
 
-* 🧠 **RVMYTH Core** – a simple educational CPU based on RISC-V
-* ⏱️ **8x PLL** – generates a stable clock
-* 🎚 **10-bit DAC** – interfaces with analog devices
-
-👉 The goal? To **test multiple open-source IPs together** and **calibrate analog parts** in an educational SoC built on **Sky130 technology**.
-
-![Block Diagram](Images/BabySoC_block.png)
+![Block Diagram](Images/BabySoC_block.png)  
 
 ---
 
-### ❓ What is VSDBabySoC?
+## 🧩 What Makes Up VSDBabySoC?  
 
-✨ A **hands-on learning platform** that demonstrates how a **CPU, PLL, and DAC** come together in one **tiny SoC**.
+At its heart, VSDBabySoC is a **mini-System-on-Chip**:  
 
-* **RVMYTH** 🧠 → RISC-V CPU Core
-* **PLL** ⏱️ → Stable clock generation
-* **DAC** 🎚 → Converts digital → analog for external devices
+1. **RVMYTH (RISC-V CPU Core)** 🧠  
+   - Fetches & executes instructions.  
+   - Drives output data through register `r17`.  
 
-🎯 **Purpose**:
-To **integrate open-source IPs** + **explore digital-analog interfacing** → output signals for **audio/video devices** like TVs & mobile phones.
+2. **Phase-Locked Loop (PLL)** ⏱️  
+   - Generates a clean, stable internal clock from an input source.  
 
----
+3. **Digital-to-Analog Converter (DAC)** 🎚  
+   - Takes the 10-bit value from the CPU (`r17`) and outputs a proportional analog voltage.  
 
-### 📘 Quick Recap of Core Concepts
-
-#### 🧩 What is SoC?
-
-A **System-on-Chip** is a **single-die chip** with multiple IP cores (CPU → Modems → DACs).
-
-#### 🧠 What is RVMYTH?
-
-A **RISC-V educational CPU core** – simple, lightweight, perfect for student learning.
-
-#### ⏱️ What is PLL?
-
-A **Phase-Locked Loop** → generates precise, stable clock signals by syncing with input phase.
-
-#### 🎚 What is DAC?
-
-A **Digital-to-Analog Converter** → bridges digital cores with analog devices.
+💡 **Concept:**  
+Think of the CPU as the **brain**, the PLL as the **heartbeat**, and the DAC as the **voice** — all working together to make the chip “speak” in analog.  
 
 ---
+
 
 ## 📂 Project Structure
 
@@ -214,20 +188,7 @@ gtkwave output/pre_synth_sim/pre_synth_sim.vcd
 * 🔢 **RV_TO_DAC[9:0]** → 10-bit RVMYTH output → DAC input
 
 ---
-
-## 🎯 RISC-V CPU (`rvmyth`) System Overview
-
-The CPU executes a program that updates **register `r17`**.
-The value in `r17` is continuously sent to the DAC, which converts it into a proportional analog voltage.
-
-**Data Flow:**
-Instruction Memory → CPU Pipeline → Register r17 → DAC → Analog OUT
-
----
-
-## 📝 Instruction Program
-
-The CPU runs a small program (13 instructions). The goal:
+### 🧠 The Instruction Program Driving BabySoC  
 
 1. Increment counters,
 2. Accumulate values into `r17`,
@@ -263,76 +224,43 @@ The CPU runs a small program (13 instructions). The goal:
 
 ---
 
+**Data Flow:**
+Instruction Memory → CPU Pipeline → Register r17 → DAC → Analog OUT
+
+---
+
+
+
+
+
 
 ## 📈 Pre_synth_sim Waveform
 
 ![Waveform](Images/Task2_Ravi_pre_synth_simualtion_final.png)
 
-## ⚡Observation  (CPU → DAC Connection)
 
-### CPU Side (`rvmyth.v`)
 
-* Register file write:
+### ⚡ CPU → DAC Mapping
 
-```verilog
-OUT = CPU_Xreg_value_a5[17]; // r17 drives DAC
-```
-
-* The CPU pipeline ensures r17’s **committed value** is sent each cycle.
-
----
-
-### DAC Side (`avsddac.v`)
-
-Digital input → Analog conversion:
-
-```verilog
-OUT <= VREFL + ($itor(Dext) / 1023.0) * (VREFH - VREFL);
-```
-
-| Term    | Meaning                |
-| ------- | ---------------------- |
-| `Dext`  | Input (r17) extended   |
-| `VREFH` | High reference voltage |
-| `VREFL` | Low reference voltage  |
-| `OUT`   | Analog output voltage  |
-
-$V_{\mathrm{OUT}} = \frac{r_{17}}{1023} \times (V_{\mathrm{REFH}} - V_{\mathrm{REFL}})$
-
-### ⚖️ **Numerics for DAC conversion**
-
-##### scaling:
+**DAC formula**
 
 $$
 V_{OUT} = \frac{r_{17}}{1023} \times V_{REF\_SPAN}
-\quad (\text{with } V_{REF\_SPAN} = 1.0\ \text{V})
 $$
 
+(for (V_{REF_SPAN} = 1.0 , \text{V}))
 
+---
 
-##### For **r17 = 903**:
+### 🔢  Outputs
 
-$$
-V_{OUT} = \frac{903}{1023} \times 1.0
-= 0.88221\ \text{V}
-$$
+| r17 | (V_{OUT}) (V) |
+| --- | ------------- |
+| 903 | 0.882         |
+| 946 | 0.925         |
 
+---
 
-##### For the peak **r17 = 946**:
-
-$$
-V_{OUT} = \frac{946}{1023} \times 1.0
-= 0.92502\ \text{V}
-$$
-
-
-
-##### 📊 Example Output Values (VREF = 1.0 V)
-
-| r17 Value  | DAC Output Voltage |
-| ---------- | ------------------ |
-| 903        | 0.882 V            |
-| 946 (peak) | 0.925 V            |
 
 
 
@@ -349,15 +277,6 @@ $$
 * ⏱️ **Waveform Mismatch** → Verify proper GTKWave format selection.
 
 ---
-
-## 🎯 Final Takeaway
-
-* **VSDBabySoC** = A **mini educational RISC-V SoC** integrating CPU + PLL + DAC.
-* 🎓 Built for **students & open-source chip enthusiasts** to understand **SoC design, verification, and digital-analog interfacing**.
-* 🛠️ Demonstrates **pre/post-synthesis simulations** using open-source tools on **Sky130 tech**.
-
-💡 BabySoC isn’t just a project — it’s a **sandbox for future chip designers 🚀**.
-
 
 ## 📚 Resources
 
