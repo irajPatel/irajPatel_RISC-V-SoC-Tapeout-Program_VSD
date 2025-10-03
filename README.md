@@ -56,10 +56,10 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 | Task       | Description | Status |
 | ---------- | ----------- | ------ |
-| [**Task 1**](Week2/README.md#task-1---conceptual-understanding) | 📘 Write-up on SoC fundamentals | ✅ Done |
-| [**Task 2**](Week2/README.md#task-2---babysoc-simulation-logs) | 📝 BabySoC simulation logs | ✅ Done |
-| [**Task 3**](Week2/README.md#task-3---gtkwave-analysis) | 📊 GTKWave screenshots | ✅ Done |
-| [**Task 4**](Week2/README.md#task-4---waveform-explanations) | ✍️ Waveform explanations | ✅ Done |
+| [**Task 1**](Week2/README.md#-Fundamentals-of-System-on-Chip-(SoC)Design) | 📘 Write-up on SoC fundamentals | ✅ Done |
+| [**Task 2**](Week2/README.md#-#-VSDBabySoC-–-A-Tiny-but-Powerful-RISC-V-SoC) | 📝 BabySoC simulation logs | ✅ Done |
+| [**Task 3**](Week2/README.md####-The-Instruction-Program-Driving-BabySoC) | 📊 Understanding of  RVMYTH core  | ✅ Done |
+| [**Task 4**](Week2/README.md##-Pre_synth_sim-Waveform) | ✍️ Waveform screenshots & explanations | ✅ Done |
 
 ---
 
