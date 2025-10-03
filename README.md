@@ -52,6 +52,26 @@ This repository documents my **week-by-week progress** with tasks inside each we
 * [**Applied knowledge:**](Week1/project.md) designed a Verilog Moving Average Filter, synthesized with Yosys, and verified via GLS.
 * [**Future work:**](Week1/project.md##-Future-Work) Extend filter designs to higher orders and implement real-time signal processing on FPGA.
 
+## 📅 Week 2 — Fundamentals of SoC Design
+
+| Task       | Description                                                                 | Status |
+| ---------- | --------------------------------------------------------------------------- | ------ |
+| [**Task 1**](Week2/README.md#-task-1--conceptual-understanding) | 📘 Write-up on SoC fundamentals: definition, components, BabySoC role, functional modeling | ✅ Done |
+| [**Task 2**](Week2/README.md#-task-2--babysoc-simulation-logs) | 📝 Generate BabySoC simulation logs showing correct CPU + memory + peripheral activity | ✅ Done |
+| [**Task 3**](Week2/README.md#-task-3--gtkwave-analysis) | 📊 Capture GTKWave screenshots (PC, instruction decode, ALU ops, memory transactions) | ✅ Done |
+| [**Task 4**](Week2/README.md#-task-4--waveform-explanations) | ✍️ Add short explanations for each waveform screenshot to highlight functionality | ✅ Done |
+
+---
+
+### 🌟 Key Learnings from Week 2  
+
+* Gained conceptual understanding of **SoC fundamentals** (CPU, memory, interconnect, peripherals).  
+* Learned how **BabySoC** simplifies SoC design concepts and verified its behavior using simulation + GTKWave.
+* **Future Work:** Add memory for instruction fetch and enable C programs to be compiled into hex for execution on BabySoC.  
+
+
+
+
 
 
 ## 🙏 Acknowledgment  
