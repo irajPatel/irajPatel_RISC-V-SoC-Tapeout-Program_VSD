@@ -54,12 +54,12 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 ## 📅 Week 2 — Fundamentals of SoC Design
 
-| Task       | Description                                                                 | Status |
-| ---------- | --------------------------------------------------------------------------- | ------ |
-| [**Task 1**](Week2/README.md#-task-1--conceptual-understanding) | 📘 Write-up on SoC fundamentals: definition, components, BabySoC role, functional modeling | ✅ Done |
-| [**Task 2**](Week2/README.md#-task-2--babysoc-simulation-logs) | 📝 Generate BabySoC simulation logs showing correct CPU + memory + peripheral activity | ✅ Done |
-| [**Task 3**](Week2/README.md#-task-3--gtkwave-analysis) | 📊 Capture GTKWave screenshots (PC, instruction decode, ALU ops, memory transactions) | ✅ Done |
-| [**Task 4**](Week2/README.md#-task-4--waveform-explanations) | ✍️ Add short explanations for each waveform screenshot to highlight functionality | ✅ Done |
+| Task       | Description | Status |
+| ---------- | ----------- | ------ |
+| [**Task 1**](Week2/README.md#task-1---conceptual-understanding) | 📘 Write-up on SoC fundamentals | ✅ Done |
+| [**Task 2**](Week2/README.md#task-2---babysoc-simulation-logs) | 📝 BabySoC simulation logs | ✅ Done |
+| [**Task 3**](Week2/README.md#task-3---gtkwave-analysis) | 📊 GTKWave screenshots | ✅ Done |
+| [**Task 4**](Week2/README.md#task-4---waveform-explanations) | ✍️ Waveform explanations | ✅ Done |
 
 ---
 
