@@ -84,7 +84,8 @@ I also acknowledge the support of **RISC-V International**, **India Semiconducto
 
 [![Week0](https://img.shields.io/badge/Week%200-Tools%20Setup-success?style=flat-square)](Week0)
 [![Week 1](https://img.shields.io/badge/Week%201-RTL%20GLS-success?style=flat-square)](Week1/README.md)
-![Week 2](https://img.shields.io/badge/Week%202-Upcoming-lightgrey?style=flat-square)
+[![Week 2](https://img.shields.io/badge/Week%202-SoC%20VSDBaby-success?style=flat-square)](Week1/README.md)
+![Week  3](https://img.shields.io/badge/Week%203-Upcoming-lightgrey?style=flat-square)
 
 
 
