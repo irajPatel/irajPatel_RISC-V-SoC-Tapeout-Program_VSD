@@ -79,7 +79,7 @@ This repository documents my **week-by-week progress** with tasks inside each we
 | [**Task&nbsp;1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-gate-level-simulation-gls-of-babysoc-%EF%B8%8F) | ⚡ Pre- and Post-Synthesis Simulation for BabySoC using **Sky130 PDK**; compared RTL vs gate-level waveforms                    | ✅ Done    |
 | [**Task&nbsp;2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-timing-graphs-using-opensta) | 📝 Short note on **Static Timing Analysis (STA)** and **OpenROAD** flow                                                        | ✅ Done    |
 | [**Task&nbsp;3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-vsdbabysoc--basic-timing-analysis-with-opensta) | 📊 Corner timing analysis with **Sky130 PDK corners** (TT, SS, FF); plotted WNS, TNS, worst slack, worst hold, and setup slack | ✅ Done    |
-| [**💡&nbsp;Extra&nbsp;Mile**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Project.md#%EF%B8%8F-yosys-synthesis-flow-using-ihp-sg13g2-pdk-%EF%B8%8F) | 🔧 Exploring BabySoC synthesis on [**IHP PDK**](https://github.com/IHP-GmbH/IHP-Open-PDK) as a preparatory step for future PDK adaptation | ✅&nbsp;Ongoing |
+| [**💡&nbsp;Extra&nbsp;Mile**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Project.md#%EF%B8%8F-yosys-synthesis-flow-using-ihp-sg13g2-pdk-%EF%B8%8F) | 🔧 Exploring BabySoC synthesis on [**IHP PDK**](https://github.com/IHP-GmbH/IHP-Open-PDK) as a preparatory step for future PDK adaptation | ✅&nbsp;Explored |
 
 ### 🌟 Key Learnings from Week 3
 
