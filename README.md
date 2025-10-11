@@ -71,7 +71,7 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 
 
-
+---
 ## 📅 Week 3 — Advanced SoC Synthesis and Timing Analysis
 
 | Task   | Description                                                                                                                    | Status    |
