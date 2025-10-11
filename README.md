@@ -73,6 +73,37 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 
 
+## 📅 Week 3 — Advanced SoC Synthesis and Timing Analysis
+
+| Task                                                | Description                                                                                                                    | Status         |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| [**Task 1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-gate-level-simulation-gls-of-babysoc-%EF%B8%8F)   | ⚡ Pre- and Post-Synthesis Simulation for BabySoC using **Sky130 PDK**; compared RTL vs gate-level waveforms                    | ✅ Done         |
+| [**Task 2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-timing-graphs-using-opensta) | 📝 Short note on **Static Timing Analysis (STA)** and **OpenROAD** flow                                                        | ✅ Done         |
+| [**Task 3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-vsdbabysoc--basic-timing-analysis-with-opensta)              | 📊 Corner timing analysis with **Sky130 PDK corners** (TT, SS, FF); plotted WNS, TNS, worst slack, worst hold, and setup slack | ✅ Done         |
+---
+
+
+| [💡Exploration](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Project.md#%EF%B8%8F-yosys-synthesis-flow-using-ihp-sg13g2-pdk-%EF%B8%8F) | 🔧 Exploring BabySoC synthesis on **IHP PDK** as a preparatory step for future PDK adaptation | ✅ Planned |
+
+
+
+
+---
+
+### 🌟 Key Learnings from Week 3
+
+* Successfully verified **functional consistency** between RTL and gate-level netlists using **pre- and post-synthesis simulations**, ensuring correct BabySoC operation after technology mapping.
+* Gained a practical understanding of **Static Timing Analysis (STA)** and the **OpenROAD flow**, including timing constraints, optimization, and automated ASIC design processes.
+* Performed **corner timing analysis** across multiple PDK corners (TT, SS, FF), extracting and interpreting metrics like **WNS, TNS, worst slack, worst hold, and setup slack**, providing insights into timing robustness of the design.
+---
+
+
+
+
+
+
+
+
 
 ## 🙏 Acknowledgment  
 
