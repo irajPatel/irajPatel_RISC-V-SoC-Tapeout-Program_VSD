@@ -30,7 +30,7 @@ This repository documents my **week-by-week progress** with tasks inside each we
 - Prepared the system for upcoming **RTL → GDSII flow experiments**.
 
 
-
+---
 ## 📅 Week 1 — RTL Synthesis & Gate-Level Simulation (GLS)
 
 | Task       | Description                                                                 | Status |
@@ -51,7 +51,7 @@ This repository documents my **week-by-week progress** with tasks inside each we
 * [**Solved synthesis error:**](Week1/README.md#-task-3--mux-using-for-generate) Fixed latch mapping by instantiating a SkyWater primitive for simulation.
 * [**Applied knowledge:**](Week1/project.md) designed a Verilog Moving Average Filter, synthesized with Yosys, and verified via GLS.
 * [**Future work:**](Week1/project.md##-Future-Work) Extend filter designs to higher orders and implement real-time signal processing on FPGA.
-
+---
 ## 📅 Week 2 — Fundamentals of SoC Design
 
 | Task       | Description | Status |
@@ -61,7 +61,7 @@ This repository documents my **week-by-week progress** with tasks inside each we
 | [**Task 3**](Week2/README.md#-the-instruction-program-driving-babysoc) | 📊 Understanding of  RVMYTH core  | ✅ Done |
 | [**Task 4**](Week2/README.md#-pre_synth_sim-waveform) | ✍️Pre synthesis Waveform  & explanations | ✅ Done |
 
----
+
 
 ### 🌟 Key Learnings from Week 2  
 
@@ -72,23 +72,14 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 
 
-
 ## 📅 Week 3 — Advanced SoC Synthesis and Timing Analysis
 
-| Task                                                | Description                                                                                                                    | Status         |
-| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------- |
-| [**Task 1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-gate-level-simulation-gls-of-babysoc-%EF%B8%8F)   | ⚡ Pre- and Post-Synthesis Simulation for BabySoC using **Sky130 PDK**; compared RTL vs gate-level waveforms                    | ✅ Done         |
-| [**Task 2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-timing-graphs-using-opensta) | 📝 Short note on **Static Timing Analysis (STA)** and **OpenROAD** flow                                                        | ✅ Done         |
-| [**Task 3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-vsdbabysoc--basic-timing-analysis-with-opensta)              | 📊 Corner timing analysis with **Sky130 PDK corners** (TT, SS, FF); plotted WNS, TNS, worst slack, worst hold, and setup slack | ✅ Done         |
----
-
-
-| [💡Exploration](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Project.md#%EF%B8%8F-yosys-synthesis-flow-using-ihp-sg13g2-pdk-%EF%B8%8F) | 🔧 Exploring BabySoC synthesis on **IHP PDK** as a preparatory step for future PDK adaptation | ✅ Planned |
-
-
-
-
----
+| Task   | Description                                                                                                                    | Status    |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| [**Task&nbsp;1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-gate-level-simulation-gls-of-babysoc-%EF%B8%8F) | ⚡ Pre- and Post-Synthesis Simulation for BabySoC using **Sky130 PDK**; compared RTL vs gate-level waveforms                    | ✅ Done    |
+| [**Task&nbsp;2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-timing-graphs-using-opensta) | 📝 Short note on **Static Timing Analysis (STA)** and **OpenROAD** flow                                                        | ✅ Done    |
+| [**Task&nbsp;3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week3#%EF%B8%8F-vsdbabysoc--basic-timing-analysis-with-opensta) | 📊 Corner timing analysis with **Sky130 PDK corners** (TT, SS, FF); plotted WNS, TNS, worst slack, worst hold, and setup slack | ✅ Done    |
+| [**💡&nbsp;Extra&nbsp;Mile**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week3/Project.md#%EF%B8%8F-yosys-synthesis-flow-using-ihp-sg13g2-pdk-%EF%B8%8F) | 🔧 Exploring BabySoC synthesis on [**IHP PDK**](https://github.com/IHP-GmbH/IHP-Open-PDK) as a preparatory step for future PDK adaptation | ✅ Planned |
 
 ### 🌟 Key Learnings from Week 3
 
