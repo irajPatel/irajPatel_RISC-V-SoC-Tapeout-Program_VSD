@@ -88,6 +88,31 @@ This repository documents my **week-by-week progress** with tasks inside each we
 * Performed **corner timing analysis** across multiple PDK corners (TT, SS, FF), extracting and interpreting metrics like **WNS, TNS, worst slack, worst hold, and setup slack**, providing insights into timing robustness of the design.
 ---
 
+## 📅 Week 6 — CMOS Power Supply & Device Variation Robustness
+
+| Task                                                               | Description                                                                                        | Status |
+| ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | ------ |
+| [**Task 6.1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-1--mosfet-behavior-the-current-voltage-chronicles)         | 🔌 Simulate NMOS device, sweep Vds for different Vgs, plot Id vs Vds                               | ✅ Done |
+| [**Task 6.2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-2--threshold-voltage--velocity-saturation-the-speed-demons)  | 📈 Sweep Vgs vs Id, extract threshold voltage Vt, observe velocity saturation                      | ✅ Done |
+| [**Task 6.3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-3--the-vtc-quest-finding-the-perfect-balance-point) | 🖥 Build CMOS inverter, sweep Vin, plot Vout vs Vin, identify switching threshold Vm               | ✅ Done |
+| [**Task 6.4**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-4--transient-response-when-time-becomes-critical)               | ⏱ Apply pulse input, extract rise/fall propagation delays                                          | ✅ Done |
+| [**Task 6.5**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#%EF%B8%8F-task-5--noise-margins-the-robustness-test)                  | 🛡 Determine VIL, VIH, VOL, VOH from VTC, compute noise margins (NML, NMH)                         | ✅ Done |
+| [**Task 6.6**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-6-cmos-power-supply--device-variation-robustness)         | ⚡ Vary Vdd and transistor sizing, observe effect on VTC, switching point, noise margins, and delay | ✅ Done |
+
+---
+
+### 🌟 Key Learnings from Week 6
+
+* Explored **transistor-level behavior** under voltage and sizing variations.
+* Observed **shifts in switching threshold (Vm)** and corresponding impact on **noise margins**.
+* Quantified **rise/fall delays** and how supply variation affects propagation times.
+* Understood **robust design principles** for CMOS inverters considering PVT variations.
+* Gained insights into how **device physics translates into timing constraints**, relevant for **STA and critical path analysis**.
+
+---
+
+
+
 
 
 
