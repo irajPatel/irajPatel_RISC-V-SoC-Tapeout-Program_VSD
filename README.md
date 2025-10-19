@@ -88,20 +88,20 @@ This repository documents my **week-by-week progress** with tasks inside each we
 * Performed **corner timing analysis** across multiple PDK corners (TT, SS, FF), extracting and interpreting metrics like **WNS, TNS, worst slack, worst hold, and setup slack**, providing insights into timing robustness of the design.
 ---
 
-## 📅 Week 6 — CMOS Power Supply & Device Variation Robustness
+## 📅 Week 4 — CMOS Power Supply & Device Variation Robustness
 
 | Task                                                               | Description                                                                                        | Status |
 | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | ------ |
-| [**Task 6.1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-1--mosfet-behavior-the-current-voltage-chronicles)         | 🔌 Simulate NMOS device, sweep Vds for different Vgs, plot Id vs Vds                               | ✅ Done |
-| [**Task 6.2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-2--threshold-voltage--velocity-saturation-the-speed-demons)  | 📈 Sweep Vgs vs Id, extract threshold voltage Vt, observe velocity saturation                      | ✅ Done |
-| [**Task 6.3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-3--the-vtc-quest-finding-the-perfect-balance-point) | 🖥 Build CMOS inverter, sweep Vin, plot Vout vs Vin, identify switching threshold Vm               | ✅ Done |
-| [**Task 6.4**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-4--transient-response-when-time-becomes-critical)               | ⏱ Apply pulse input, extract rise/fall propagation delays                                          | ✅ Done |
-| [**Task 6.5**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#%EF%B8%8F-task-5--noise-margins-the-robustness-test)                  | 🛡 Determine VIL, VIH, VOL, VOH from VTC, compute noise margins (NML, NMH)                         | ✅ Done |
-| [**Task 6.6**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-6-cmos-power-supply--device-variation-robustness)         | ⚡ Vary Vdd and transistor sizing, observe effect on VTC, switching point, noise margins, and delay | ✅ Done |
+| [**Task 4.1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-1--mosfet-behavior-the-current-voltage-chronicles)         | 🔌 Simulate NMOS device, sweep Vds for different Vgs, plot Id vs Vds                               | ✅ Done |
+| [**Task 4.2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-2--threshold-voltage--velocity-saturation-the-speed-demons)  | 📈 Sweep Vgs vs Id, extract threshold voltage Vt, observe velocity saturation                      | ✅ Done |
+| [**Task 4.3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-3--the-vtc-quest-finding-the-perfect-balance-point) | 🖥 Build CMOS inverter, sweep Vin, plot Vout vs Vin, identify switching threshold Vm               | ✅ Done |
+| [**Task 4.4**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-4--transient-response-when-time-becomes-critical)               | ⏱ Apply pulse input, extract rise/fall propagation delays                                          | ✅ Done |
+| [**Task 4.5**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#%EF%B8%8F-task-5--noise-margins-the-robustness-test)                  | 🛡 Determine VIL, VIH, VOL, VOH from VTC, compute noise margins (NML, NMH)                         | ✅ Done |
+| [**Task 4.6**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week4#-task-6-cmos-power-supply--device-variation-robustness)         | ⚡ Vary Vdd and transistor sizing, observe effect on VTC, switching point, noise margins, and delay | ✅ Done |
 
 ---
 
-### 🌟 Key Learnings from Week 6
+### 🌟 Key Learnings from Week 4
 
 * Explored **transistor-level behavior** under voltage and sizing variations.
 * Observed **shifts in switching threshold (Vm)** and corresponding impact on **noise margins**.
@@ -133,7 +133,7 @@ I also acknowledge the support of **RISC-V International**, **India Semiconducto
 [![Week1](https://img.shields.io/badge/Week%201-RTL%20GLS-success?style=flat-square)](Week1/README.md)
 [![Week2](https://img.shields.io/badge/Week%202-SoC%20VSDBaby-success?style=flat-square)](Week1/README.md)
 [![Week3](https://img.shields.io/badge/Week%203-SoC%20STA-success?style=flat-square)](Week3/README.md)
-![Week4](https://img.shields.io/badge/Week%204-Upcoming-lightgrey?style=flat-square)
+[![Week4](https://img.shields.io/badge/Week%204-CMOS%20Spice-success?style=flat-square)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/README.md)
 ![Week5](https://img.shields.io/badge/Week%205-Upcoming-lightgrey?style=flat-square)
 ![Week6](https://img.shields.io/badge/Week%206-Upcoming-lightgrey?style=flat-square)
 ![Week7](https://img.shields.io/badge/Week%207-Upcoming-lightgrey?style=flat-square)
