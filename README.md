@@ -111,6 +111,25 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 ---
 
+## 📅 Week 5 — OpenROAD Flow Setup & Floorplan + Placement
+
+| Task                                                               | Description                                                                                        | Status |
+| ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | ------ |
+| [**Task&nbsp;1**](link-to-installation-section)         | 📥 Clone OpenROAD repository, run setup script, and build tools locally                               | ✅ Done |
+| [**Task&nbsp;2**](link-to-verification-section)  | ✅ Verify installation using Yosys and OpenROAD command-line tools                      | ✅ Done |
+| [**Task&nbsp;3**](link-to-execution-section) | 📐 Execute Floorplan and Placement stages (stop before routing)               | ✅ Done |
+| [**Task&nbsp;4**](link-to-visualization-section)               | 👁️ Launch GUI to visualize floorplan layout and placed standard cells                                          | ✅ Done |
+
+---
+
+### 🌟 Key Learnings from Week 5
+
+* Transitioned from **transistor-level SPICE** to **physical backend implementation** using OpenROAD.
+* Understood how **floorplanning defines chip boundaries** and **placement optimizes cell arrangement**.
+* Learned to use **open-source EDA tools** for RTL-to-GDSII automation flow.
+* Recognized how **physical layout impacts timing** - connecting Week 4's delay analysis to real silicon.
+
+---
 
 
 
@@ -134,7 +153,7 @@ I also acknowledge the support of **RISC-V International**, **India Semiconducto
 [![Week2](https://img.shields.io/badge/Week%202-SoC%20VSDBaby-success?style=flat-square)](Week1/README.md)
 [![Week3](https://img.shields.io/badge/Week%203-SoC%20STA-success?style=flat-square)](Week3/README.md)
 [![Week4](https://img.shields.io/badge/Week%204-CMOS%20Spice-success?style=flat-square)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/README.md)
-![Week5](https://img.shields.io/badge/Week%205-Upcoming-lightgrey?style=flat-square)
+![Week5](https://img.shields.io/badge/Week%205-Open%20Road-success?style=flat-square)
 ![Week6](https://img.shields.io/badge/Week%206-Upcoming-lightgrey?style=flat-square)
 ![Week7](https://img.shields.io/badge/Week%207-Upcoming-lightgrey?style=flat-square)
 
