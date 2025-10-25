@@ -147,16 +147,20 @@ I am thankful to [**Kunal Ghosh**](https://github.com/kunalg123) and Team **[VLS
 I also acknowledge the support of **RISC-V International**, **India Semiconductor Mission (ISM)**, **VLSI Society of India (VSI)**, and [**Efabless**](https://github.com/efabless) for making this initiative possible.  
 
 ## 📈 **Weekly Progress Tracker**
+<!-- Completed Weeks - All Green -->
+[![Week0](https://img.shields.io/badge/📦_Week_0-Tools_Setup-10b981?style=for-the-badge&logo=windows-terminal&logoColor=white)](Week0)
+[![Week1](https://img.shields.io/badge/⚡_Week_1-RTL_GLS-10b981?style=for-the-badge&logo=altium-designer&logoColor=white)](Week1/README.md)
+[![Week2](https://img.shields.io/badge/🔧_Week_2-SoC_VSDBaby-10b981?style=for-the-badge&logo=microchip&logoColor=white)](Week2/README.md)
+[![Week3](https://img.shields.io/badge/⏱️_Week_3-SoC_STA-10b981?style=for-the-badge&logo=clockify&logoColor=white)](Week3/README.md)
+[![Week4](https://img.shields.io/badge/🔬_Week_4-CMOS_Spice-10b981?style=for-the-badge&logo=atom&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/README.md)
+[![Week5](https://img.shields.io/badge/🛣️_Week_5-Open_ROAD-10b981?style=for-the-badge&logo=openstreetmap&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/README.md)
 
-[![Week0](https://img.shields.io/badge/Week%200-Tools%20Setup-success?style=flat-square)](Week0)
-[![Week1](https://img.shields.io/badge/Week%201-RTL%20GLS-success?style=flat-square)](Week1/README.md)
-[![Week2](https://img.shields.io/badge/Week%202-SoC%20VSDBaby-success?style=flat-square)](Week2/README.md)
-[![Week3](https://img.shields.io/badge/Week%203-SoC%20STA-success?style=flat-square)](Week3/README.md)
-[![Week4](https://img.shields.io/badge/Week%204-CMOS%20Spice-success?style=flat-square)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/README.md)
-[![Week5](https://img.shields.io/badge/Week%205-Open%20ROAD-success?style=flat-square)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/README.md)
-![Week6](https://img.shields.io/badge/Week%206-Upcoming-lightgrey?style=flat-square)
-![Week7](https://img.shields.io/badge/Week%207-Upcoming-lightgrey?style=flat-square)
-
+<!-- Upcoming Weeks - All Grey -->
+![Week6](https://img.shields.io/badge/🔒_Week_6-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
+![Week7](https://img.shields.io/badge/🔒_Week_7-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
+![Week8](https://img.shields.io/badge/🔒_Week_8-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
+![Week9](https://img.shields.io/badge/🔒_Week_9-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
+![Week10](https://img.shields.io/badge/🔒_Week_10-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
 
 
 **🔗 Program Links:**
