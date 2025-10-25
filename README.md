@@ -115,10 +115,10 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 | Task                                                               | Description                                                                                        | Status |
 | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | ------ |
-| [**Task&nbsp;1**](link-to-installation-section)         | 📥 Clone OpenROAD repository, run setup script, and build tools locally                               | ✅ Done |
-| [**Task&nbsp;2**](link-to-verification-section)  | ✅ Verify installation using Yosys and OpenROAD command-line tools                      | ✅ Done |
-| [**Task&nbsp;3**](link-to-execution-section) | 📐 Execute Floorplan and Placement stages (stop before routing)               | ✅ Done |
-| [**Task&nbsp;4**](link-to-visualization-section)               | 👁️ Launch GUI to visualize floorplan layout and placed standard cells                                          | ✅ Done |
+| [**Task&nbsp;1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week5#-installation--execution-flow)         | 📥 Clone OpenROAD repository, run setup script, and build tools locally                               | ✅ Done |
+| [**Task&nbsp;2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week5#step-4%EF%B8%8F%E2%83%A3-verify-installation)  | ✅ Verify installation using Yosys and OpenROAD command-line tools                      | ✅ Done |
+| [**Task&nbsp;3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week5#step-5%EF%B8%8F%E2%83%A3-execute-floorplan--placement-%EF%B8%8F) | 📐 Execute Floorplan and Placement stages (stop before routing)               | ✅ Done |
+| [**Task&nbsp;4**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week5#step-6%EF%B8%8F%E2%83%A3-visualize-results-in-gui-%EF%B8%8F)               | 👁️ Launch GUI to visualize floorplan layout and placed standard cells                                          | ✅ Done |
 
 ---
 
@@ -150,10 +150,10 @@ I also acknowledge the support of **RISC-V International**, **India Semiconducto
 
 [![Week0](https://img.shields.io/badge/Week%200-Tools%20Setup-success?style=flat-square)](Week0)
 [![Week1](https://img.shields.io/badge/Week%201-RTL%20GLS-success?style=flat-square)](Week1/README.md)
-[![Week2](https://img.shields.io/badge/Week%202-SoC%20VSDBaby-success?style=flat-square)](Week1/README.md)
+[![Week2](https://img.shields.io/badge/Week%202-SoC%20VSDBaby-success?style=flat-square)](Week2/README.md)
 [![Week3](https://img.shields.io/badge/Week%203-SoC%20STA-success?style=flat-square)](Week3/README.md)
 [![Week4](https://img.shields.io/badge/Week%204-CMOS%20Spice-success?style=flat-square)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/README.md)
-![Week5](https://img.shields.io/badge/Week%205-Open%20Road-success?style=flat-square)
+[![Week5](https://img.shields.io/badge/Week%205-Open%20ROAD-success?style=flat-square)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/README.md)
 ![Week6](https://img.shields.io/badge/Week%206-Upcoming-lightgrey?style=flat-square)
 ![Week7](https://img.shields.io/badge/Week%207-Upcoming-lightgrey?style=flat-square)
 
