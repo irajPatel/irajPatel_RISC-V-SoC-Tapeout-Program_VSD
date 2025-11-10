@@ -131,6 +131,29 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 ---
 
+## 📅 Week 6 — OpenLANE RTL-to-GDSII Flow & Timing Optimization
+
+| Task                                                               | Description                                                                                        | Status |
+| ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | ------ |
+| [**Task&nbsp;1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week6#-day-1--foundation-of-open-source-silicon)         | 🏗️ OpenLANE workflow setup, Sky130 PDK fundamentals, and automated RTL-to-GDSII flow execution     | ✅ Done |
+| [**Task&nbsp;2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week6#%EF%B8%8F-day-2--floorplanning-fundamentals)  | 📐 Floorplan configuration, die/core planning, library cell placement strategies                   | ✅ Done |
+| [**Task&nbsp;3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week6#-day-3--library-cell-design--characterization) | 🎨 Custom CMOS inverter design in Magic, SPICE extraction, timing characterization, and LEF generation | ✅ Done |
+| [**Task&nbsp;4**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week6#-day-4--custom-cell-integration--sta)               | ⏱️ Custom cell integration, pre-layout STA, slack optimization, and Clock Tree Synthesis (CTS)      | ✅ Done |
+| [**Task&nbsp;5**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week6#-day-5--pdn-routing--gdsii-sign-off)                  | 🛣️ Power Distribution Network (PDN) generation, routing execution, and final GDSII sign-off         | ✅ Done |
+| [**💡&nbsp;Extra&nbsp;Mile**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/README.md#day-3) | 🔬 Explored **PySpice** for circuit simulation & analysis; Created custom **TCL commands** for automated synthesis parameter sweeping in OpenLANE to find optimal poly strategies; Developed **TCL-based cell replacement script** with OpenROAD for targeted slack reduction through intelligent buffer/inverter sizing | ✅&nbsp;Explored |
+
+---
+
+### 🌟 Key Learnings from Week 6
+
+* Mastered the complete **OpenLANE automated RTL-to-GDSII flow** from synthesis through final sign-off using Sky130 PDK.
+* Designed and characterized a **custom CMOS inverter cell** - from transistor-level layout in Magic to timing analysis and LEF generation for integration.
+* Performed **Static Timing Analysis (STA)** optimization, reducing slack violations through synthesis strategy tuning, cell sizing, and manual targeted cell replacement.
+* Successfully executed **Clock Tree Synthesis (CTS)** and understood the critical impact of balanced clock distribution on setup/hold timing.
+* Generated a **robust Power Distribution Network (PDN)** and completed **DRC-clean routing** with zero violations, producing a manufacturable GDSII layout.
+
+---
+
 
 
 
@@ -147,16 +170,14 @@ I am thankful to [**Kunal Ghosh**](https://github.com/kunalg123) and Team **[VLS
 I also acknowledge the support of **RISC-V International**, **India Semiconductor Mission (ISM)**, **VLSI Society of India (VSI)**, and [**Efabless**](https://github.com/efabless) for making this initiative possible.  
 
 ## 📈 **Weekly Progress Tracker**
-<!-- Completed Weeks - All Green -->
-[![Week0](https://img.shields.io/badge/📦_Week_0-Tools_Setup-10b981?style=for-the-badge&logo=windows-terminal&logoColor=white)](Week0)
-[![Week1](https://img.shields.io/badge/⚡_Week_1-RTL_GLS-10b981?style=for-the-badge&logo=altium-designer&logoColor=white)](Week1/README.md)
-[![Week2](https://img.shields.io/badge/🔧_Week_2-SoC_VSDBaby-10b981?style=for-the-badge&logo=microchip&logoColor=white)](Week2/README.md)
-[![Week3](https://img.shields.io/badge/⏱️_Week_3-SoC_STA-10b981?style=for-the-badge&logo=clockify&logoColor=white)](Week3/README.md)
-[![Week4](https://img.shields.io/badge/🔬_Week_4-CMOS_Spice-10b981?style=for-the-badge&logo=atom&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/README.md)
-[![Week5](https://img.shields.io/badge/🛣️_Week_5-Open_ROAD-10b981?style=for-the-badge&logo=openstreetmap&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/README.md)
 
-<!-- Upcoming Weeks - All Grey -->
-![Week6](https://img.shields.io/badge/🔒_Week_6-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
+[![Week0](https://img.shields.io/badge/📦_Week_0-Tools_Setup-00C853?style=for-the-badge&logo=windows-terminal&logoColor=white)](Week0)
+[![Week1](https://img.shields.io/badge/⚡_Week_1-RTL_GLS-00C853?style=for-the-badge&logo=altium-designer&logoColor=white)](Week1/README.md)
+[![Week2](https://img.shields.io/badge/🔧_Week_2-SoC_VSDBaby-00C853?style=for-the-badge&logo=microchip&logoColor=white)](Week2/README.md)
+[![Week3](https://img.shields.io/badge/⏱️_Week_3-SoC_STA-00C853?style=for-the-badge&logo=clockify&logoColor=white)](Week3/README.md)
+[![Week4](https://img.shields.io/badge/🔬_Week_4-CMOS_Spice-00C853?style=for-the-badge&logo=atom&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/README.md)
+[![Week5](https://img.shields.io/badge/🛣️_Week_5-Open_ROAD-00C853?style=for-the-badge&logo=openstreetmap&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/README.md)
+[![Week6](https://img.shields.io/badge/⚡_Week_6-OpenLANE_GDSII-00C853?style=for-the-badge&logo=chip&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/README.md)
 ![Week7](https://img.shields.io/badge/🔒_Week_7-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
 ![Week8](https://img.shields.io/badge/🔒_Week_8-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
 ![Week9](https://img.shields.io/badge/🔒_Week_9-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
