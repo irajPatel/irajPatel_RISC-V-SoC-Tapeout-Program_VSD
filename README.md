@@ -154,6 +154,29 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 ---
 
+## 📅 Week 7 — VSDBabySoc Physical Design & Post-Route Parasitic Extraction
+
+| Task                                                               | Description                                                                                        | Status |
+| ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | ------ |
+| [**Task&nbsp;1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week7#4%EF%B8%8F%E2%83%A3-synthesis)         | 🔧 OpenROAD-flow-scripts installation, VSDBabySoC file organization, and RTL synthesis with Yosys  | ✅ Done |
+| [**Task&nbsp;2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week7#5%EF%B8%8F%E2%83%A3-floorplan)  | 📐 Floorplan execution with macro placement for analog blocks (PLL & DAC)                          | ✅ Done |
+| [**Task&nbsp;3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week7#6%EF%B8%8F%E2%83%A3-placement) | 📍 Global and detailed placement with density heat map analysis and legalization                   | ✅ Done |
+| [**Task&nbsp;4**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week7#7%EF%B8%8F%E2%83%A3-clock-tree-synthesis-cts)               | ⏰ Clock Tree Synthesis achieving 0.65ns skew, timing closure (WNS=5.55ns), and power analysis      | ✅ Done |
+| [**Task&nbsp;5**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week7#8%EF%B8%8F%E2%83%A3-routing)                  | 🛣️ Global and detailed routing with zero DRC violations for clean layout                           | ✅ Done |
+| [**Task&nbsp;6**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week7#9%EF%B8%8F%E2%83%A3-post-route-spef-generation)                  | 📊 Post-route SPEF (Standard Parasitic Exchange Format) generation for accurate timing sign-off     | ✅ Done |
+
+---
+
+### 🌟 Key Learnings from Week 7
+
+* Executed the **complete OpenROAD physical design flow** for VSDBabySoC RISC-V SoC from synthesis to final GDSII generation.
+* Successfully integrated **analog macros (PLL & DAC)** with digital RISC-V core, fixing Liberty file power pin definitions for proper parsing.
+* Achieved **timing closure** with positive slack (WNS = 5.55ns, TNS = 0.00ns) and minimized **clock skew to 0.65ns** through optimized Clock Tree Synthesis.
+* Completed **DRC-clean routing** with zero violations and generated **post-route SPEF** for accurate parasitic extraction and timing sign-off.
+* Understood the critical difference between **pre-route** (~30% timing error) and **post-route STA with SPEF** (<5% error) for silicon-accurate analysis.
+
+---
+
 
 
 
@@ -178,7 +201,7 @@ I also acknowledge the support of **RISC-V International**, **India Semiconducto
 [![Week4](https://img.shields.io/badge/🔬_Week_4-CMOS_Spice-00C853?style=for-the-badge&logo=atom&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week4/README.md)
 [![Week5](https://img.shields.io/badge/🛣️_Week_5-Open_ROAD-00C853?style=for-the-badge&logo=openstreetmap&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/README.md)
 [![Week6](https://img.shields.io/badge/⚡_Week_6-OpenLANE_GDSII-00C853?style=for-the-badge&logo=chip&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/README.md)
-![Week7](https://img.shields.io/badge/🔒_Week_7-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
+[![Week7](https://img.shields.io/badge/🏗️_Week_7-OpenROAD_SPEF-00C853?style=for-the-badge&logo=openaccess&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/README.MD)
 ![Week8](https://img.shields.io/badge/🔒_Week_8-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
 ![Week9](https://img.shields.io/badge/🔒_Week_9-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
 ![Week10](https://img.shields.io/badge/🔒_Week_10-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
