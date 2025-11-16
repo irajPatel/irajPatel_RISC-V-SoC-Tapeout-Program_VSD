@@ -146,11 +146,11 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 ### 🌟 Key Learnings from Week 6
 
-* Mastered the complete **OpenLANE automated RTL-to-GDSII flow** from synthesis through final sign-off using Sky130 PDK.
-* Designed and characterized a **custom CMOS inverter cell** - from transistor-level layout in Magic to timing analysis and LEF generation for integration.
-* Performed **Static Timing Analysis (STA)** optimization, reducing slack violations through synthesis strategy tuning, cell sizing, and manual targeted cell replacement.
-* Successfully executed **Clock Tree Synthesis (CTS)** and understood the critical impact of balanced clock distribution on setup/hold timing.
-* Generated a **robust Power Distribution Network (PDN)** and completed **DRC-clean routing** with zero violations, producing a manufacturable GDSII layout.
+* Mastered complete **OpenLANE RTL-to-GDSII flow** using Sky130 PDK with automated synthesis, placement, and routing.
+* Designed custom **CMOS inverter cell** in Magic, performed SPICE characterization, and generated LEF for integration.
+* Optimized timing through **STA-driven synthesis tuning**, manual cell replacement, and intelligent buffer sizing via TCL scripts.
+* Achieved **timing closure with CTS**, understanding clock skew impact on setup/hold timing constraints.
+* Completed **DRC-clean GDSII** with robust PDN, explored PySpice simulation and automated parameter sweeping.
 
 ---
 
@@ -169,11 +169,11 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 ### 🌟 Key Learnings from Week 7
 
-* Executed the **complete OpenROAD physical design flow** for VSDBabySoC RISC-V SoC from synthesis to final GDSII generation.
-* Successfully integrated **analog macros (PLL & DAC)** with digital RISC-V core, fixing Liberty file power pin definitions for proper parsing.
-* Achieved **timing closure** with positive slack (WNS = 5.55ns, TNS = 0.00ns) and minimized **clock skew to 0.65ns** through optimized Clock Tree Synthesis.
-* Completed **DRC-clean routing** with zero violations and generated **post-route SPEF** for accurate parasitic extraction and timing sign-off.
-* Understood the critical difference between **pre-route** (~30% timing error) and **post-route STA with SPEF** (<5% error) for silicon-accurate analysis.
+* Executed complete **OpenROAD physical design flow** for VSDBabySoC from synthesis to GDSII with analog macro integration.
+* Fixed **Liberty file power pin syntax** (pg_pin) for PLL/DAC macros to enable proper OpenROAD parsing.
+* Achieved **timing closure** (WNS=5.55ns, TNS=0ns) with optimized CTS reducing clock skew to 0.65ns.
+* Completed **zero-violation routing** and generated post-route SPEF for accurate parasitic extraction.
+* Learned **pre-route vs post-route STA accuracy** - SPEF-based analysis reduces timing error from ~30% to <5%.
 
 ---
 
