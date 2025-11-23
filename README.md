@@ -169,11 +169,33 @@ This repository documents my **week-by-week progress** with tasks inside each we
 
 ### 🌟 Key Learnings from Week 7
 
-* Executed complete **OpenROAD physical design flow** for VSDBabySoC from synthesis to GDSII with analog macro integration.
+* Executed the **complete OpenROAD physical design flow** for VSDBabySoC from synthesis to GDSII with analog macro integration.
 * Fixed **Liberty file power pin syntax** (pg_pin) for PLL/DAC macros to enable proper OpenROAD parsing.
 * Achieved **timing closure** (WNS=5.55ns, TNS=0ns) with optimized CTS reducing clock skew to 0.65ns.
 * Completed **zero-violation routing** and generated post-route SPEF for accurate parasitic extraction.
 * Learned **pre-route vs post-route STA accuracy** - SPEF-based analysis reduces timing error from ~30% to <5%.
+
+---
+
+## 📅 Week 8 — Post-Layout STA & Timing Analysis Across PVT Corners
+
+| Task                                                               | Description                                                                                        | Status |
+| ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- | ------ |
+| [**Task&nbsp;1**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week8#-task-overview)         | 📊 Load post-route design into OpenSTA with SPEF annotation across 16 PVT corners  | ✅ Done |
+| [**Task&nbsp;2**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week8#-sta-analysis-results)  | ⏱️ Execute comprehensive STA analysis generating timing reports, WNS, TNS, hold slack metrics                   | ✅ Done |
+| [**Task&nbsp;3**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week8#-comparative-analysis-week-3-vs-week-8) | 📉 Compare Week 3 (post-synthesis) vs Week 8 (post-route) timing to quantify parasitic impact | ✅ Done |
+| [**Task&nbsp;4**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week8#-physical-design-impact-analysis)               | 🔬 Analyze SPEF parasitic effects (RC delays, coupling, temperature/voltage sensitivity)      | ✅ Done |
+| [**Task&nbsp;5**](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/tree/main/Week8#-conclusion--tape-out-readiness)                  | 🎯 Generate comprehensive STA visualization plots and tape-out readiness assessment             | ✅ Done |
+
+---
+
+### 🌟 Key Learnings from Week 8
+
+* Performed **post-route STA with SPEF across 16 PVT corners** (FF, SS, TT) revealing parasitic penalty of up to 1.88ns on slow corners.
+* Quantified **timing degradation**: synthesis→placement (0.3-2%), placement→CTS (0.5-1.5%), CTS→routing (0.5-3%), totaling 2.8% average.
+* Discovered **4 slow-corner failures** (SS_n40C variants) indicating design needs optimization; fast/typical corners show healthy margins (7.3-8.8ns).
+* Analyzed **hold timing robustness** - all corners pass with <3% degradation thanks to effective CTS balancing clock skew.
+* Understood **SPEF parasitic components**: wire resistance/capacitance contribute 40-50% each to RC delay; coupling effects add 10-15%.
 
 ---
 
@@ -202,7 +224,7 @@ I also acknowledge the support of **RISC-V International**, **India Semiconducto
 [![Week5](https://img.shields.io/badge/🛣️_Week_5-Open_ROAD-00C853?style=for-the-badge&logo=openstreetmap&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week5/README.md)
 [![Week6](https://img.shields.io/badge/⚡_Week_6-OpenLANE_GDSII-00C853?style=for-the-badge&logo=chip&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week6/README.md)
 [![Week7](https://img.shields.io/badge/🏗️_Week_7-OpenROAD_SPEF-00C853?style=for-the-badge&logo=openaccess&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week7/README.MD)
-![Week8](https://img.shields.io/badge/🔒_Week_8-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
+[![Week8](https://img.shields.io/badge/⏱️_Week_8-Post_STA_Analysis-00C853?style=for-the-badge&logo=clockify&logoColor=white)](https://github.com/irajPatel/irajPatel_RISC-V-SoC-Tapeout-Program_VSD/blob/main/Week8/README.md)
 ![Week9](https://img.shields.io/badge/🔒_Week_9-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
 ![Week10](https://img.shields.io/badge/🔒_Week_10-Upcoming-6c757d?style=for-the-badge&logo=hourglass&logoColor=white)
 
